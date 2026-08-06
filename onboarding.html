@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інструктаж новопризначеного - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .instruction-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+    
+    .instruction-item {
+      background-color: rgba(139, 94, 60, 0.03);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    .instruction-item:hover {
+      background-color: rgba(139, 94, 60, 0.06);
+      transform: translateX(4px);
+    }
+    
+    .item-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--color-accent);
+      opacity: 0.8;
+      min-width: 2rem;
+    }
+    
+    .item-content {
+      flex: 1;
+    }
+    
+    .item-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .item-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-sm);
+      text-align: justify;
+    }
+    
+    .item-action {
+      background-color: rgba(139, 94, 60, 0.08);
+      border: 1px solid rgba(203, 178, 156, 0.2);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+    
+    .item-action strong {
+      color: var(--color-accent);
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        display: block !important;
+      }
+      
+      .instruction-list {
+        display: block !important;
+      }
+      
+      .instruction-item {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 14px !important;
+        display: block !important;
+        margin-left: 0 !important;
+        page-break-inside: avoid;
+      }
+      
+      .item-number {
+        display: none !important;
+      }
+      
+      .item-content {
+        display: inline !important;
+      }
+      
+      .item-title {
+        font-family: 'Times New Roman', serif !important;
+        font-weight: bold !important;
+        font-size: 12pt !important;
+        color: #2d3748 !important;
+        display: inline !important;
+      }
+      
+      .item-title::after {
+        content: "\A";
+        white-space: pre;
+      }
+      
+      .item-desc {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        color: #2d3748 !important;
+        margin-top: 3px !important;
+        margin-bottom: 4px !important;
+        text-align: justify !important;
+        display: block !important;
+      }
+      
+      .item-action {
+        display: block !important;
+        background-color: #f7fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+        font-size: 10.5pt !important;
+        color: #4a5568 !important;
+        font-style: italic !important;
+        margin-top: 4px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .item-action strong {
+        color: #111111 !important;
+      }
+      
+      .additional-doc-card {
+        background: none !important;
+        border: none !important;
+        border-top: 1px solid #cbd5e0 !important;
+        border-radius: 0 !important;
+        padding: 12px 0 0 0 !important;
+        margin-top: 30px !important;
+        display: block !important;
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        page-break-inside: avoid;
+      }
+      
+      .additional-doc-card i {
+        display: none !important;
+      }
+      
+      .additional-doc-card strong {
+        color: #1a365d !important;
+      }
+      
+      /* Print Summary Styles */
+      .summary-title {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        margin-top: 30px !important;
+        margin-bottom: 15px !important;
+        border-bottom: 2px solid #1a365d !important;
+        padding-bottom: 4px !important;
+        display: block !important;
+        page-break-before: always;
+      }
+      
+      .summary-container {
+        display: block !important;
+      }
+      
+      .summary-card {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+        page-break-inside: avoid;
+      }
+      
+      .summary-card-header {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        margin-bottom: 10px !important;
+      }
+      
+      .summary-card-header i {
+        display: none !important;
+      }
+      
+      .summary-block {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 10px !important;
+      }
+      
+      .summary-block-title {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        color: #2d3748 !important;
+        margin-bottom: 4px !important;
+      }
+      
+      .summary-block-title i {
+        display: none !important;
+      }
+      
+      .summary-block-content {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        color: #111111 !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        font-style: normal !important;
+      }
+      
+      .summary-doc-list {
+        padding-left: 20px !important;
+      }
+    }
+    
+    /* Web Summary Styles */
+    .summary-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-lg);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 3px double rgba(203, 178, 156, 0.3);
+      padding-bottom: var(--spacing-sm);
+    }
+    
+    .summary-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .summary-card {
+      background-color: rgba(139, 94, 60, 0.02);
+      border: 1px solid rgba(203, 178, 156, 0.2);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+    }
+    
+    .summary-card-header {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .summary-card-header i {
+      color: var(--color-accent);
+    }
+    
+    .summary-block {
+      margin-bottom: var(--spacing-md);
+      padding: var(--spacing-md);
+      background-color: rgba(139, 94, 60, 0.04);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    
+    .summary-block.docs {
+      border-left-color: var(--color-success);
+    }
+    
+    .summary-block-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .summary-block-title i {
+      color: var(--color-accent);
+    }
+    
+    .summary-block.docs .summary-block-title i {
+      color: var(--color-success);
+    }
+    
+    .summary-block-content {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    
+    .summary-block-content p {
+      margin-bottom: 8px;
+    }
+    
+    .summary-block-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .summary-doc-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .summary-doc-list li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">Інструктаж новопризначеного</h1>
+        <p class="subtitle">План-програма проведення вступних заходів та опрацювання документів</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title">Інструктаж новопризначеного</h2>
+        <p class="page-subtitle">План-програма проведення вступних заходів та опрацювання документів.</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Section I -->
+        <div class="instruction-section-title">І. Під час опрацювання заяви та пакету документів</div>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Подання та перевірка декларації осіб, уповноважених на виконання функцій держави або місцевого самоврядування</h4>
+              <p class="item-desc">Організація та здійснення перевірки факту подання кандидатом декларації за минулий рік у Єдиному державному реєстрі декларацій осіб, уповноважених на виконання функцій держави або місцевого самоврядування.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Перевіряється у Реєстрі декларацій НАЗК.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Отримання інформації щодо близьких осіб</h4>
+              <p class="item-desc">Збір та опрацювання даних щодо наявності близьких осіб з метою запобігання виникненню обставин прямого підпорядкування або потенційного конфлікту інтересів.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Заповнення новопризначеним установленого опитувальника щодо родичів та близьких осіб.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Попередженням (Додаток 1 до Наказу №40 від 01.07.2024)</h4>
+              <p class="item-desc">Офіційне ознайомлення кандидатів із встановленими законодавством обмеженнями, заборонами та спеціальними вимогами щодо державної служби.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Додаток 1 до Наказу №40 підписується кандидатом особисто.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Інформування про необхідність проходження тесту на конфлікт інтересів</h4>
+              <p class="item-desc">Проведення роз'яснювальної роботи щодо порядку та процедури проходження онлайн-тестування з питань запобігання конфлікту інтересів на офіційному вебресурсі НАЗК.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Оцінка знань, фіксація факту інформування та проходження зазначається у Журналі обліку інструктажів.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section II -->
+        <div class="instruction-section-title">ІІ. У перший робочий день працівника</div>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Роз'яснення основних положень антикорупційного законодавства</h4>
+              <p class="item-desc">Проведення вступного антикорупційного інструктажу щодо дотримання вимог Закону України «Про запобігання корупції», процедур повідомлення про факти корупції та правового статусу викривачів.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Відмітка про проведення роз'яснень зазначається в Журналі обліку інструктажів.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Правилами професійної етики</h4>
+              <p class="item-desc">Ознайомлення з Правилами професійної етики посадових осіб Установи та її територіальних органів, затвердженими наказом Установи від 08.12.2023 №312 (далі — Наказ №312).</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Під особистий підпис доводиться Повідомлення за формою, визначеною додатком до Наказу №312 (далі — Повідомлення №1).
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Повідомленням (Додаток 2 до Наказу №40 від 01.07.2024)</h4>
+              <p class="item-desc">Доведення до відома посадової особи спеціальних інструкцій, обов'язків та порядок дій під час виконання посадових повноважень відповідно до внутрішніх організаційних наказів.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Додаток 2 підписується працівником особисто.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Пам’яткою (роз’ясненням) новопризначеного</h4>
+              <p class="item-desc">Надання та опрацювання методичних матеріалів щодо прав, обов’язків, порядку проходження державної служби та внутрішнього службового розпорядку.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Особистий підпис новопризначеного під Пам'яткою.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Пам’яткою про використання державного майна</h4>
+              <p class="item-desc">Роз'яснення правил та стандартів належного, бережливого та ефективного використання майна, комп'ютерної техніки та матеріально-технічних цінностей установи.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Особистий підпис новопризначеного під Пам'яткою.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Ознайомлення з Пам’яткою про захист персональних даних</h4>
+              <p class="item-desc">Інструктаж щодо дотримання вимог Закону України «Про захист персональних даних», забезпечення конфіденційності інформації з обмеженим доступом та відповідальності за її розголошення.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Особистий підпис новопризначеного під Пам'яткою.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Інформування про функціонування внутрішніх каналів зв’язку</h4>
+              <p class="item-desc">Ознайомлення з роботою спеціальних та внутрішніх каналів повідомлення про можливі факти корупційних або пов'язаних з корупцією правопорушень, а також порядку звернення працівників.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Зазначається у Журналі обліку інструктажів.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Інформування про порядок проходження навчального курсу для новопризначених</h4>
+              <p class="item-desc">Роз'яснення порядку, термінів та умов обов'язкового проходження онлайн-курсу підготовки новопризначених осіб на навчальних платформах НАЗК.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Зазначається у Журналі обліку інструктажів.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Summary Section (Підсумок) -->
+        <div class="summary-title">Підсумок</div>
+        <div class="summary-container">
+          <!-- Part I Summary -->
+          <div class="summary-card">
+            <div class="summary-card-header">
+              <i class="fas fa-folder-open"></i> І. Під час опрацювання заяви та пакету документів
+            </div>
+            
+            <div class="summary-block">
+              <div class="summary-block-title">
+                <i class="fas fa-pen-fancy"></i> У журналі інструктажів повинен бути запис:
+              </div>
+              <div class="summary-block-content" style="font-style: italic; background-color: rgba(139, 94, 60, 0.05); padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-md); border: 1px dashed rgba(203, 178, 156, 0.3);">
+                &ldquo;Проведено інструктаж з кандидатом на посаду, під час якого перевірено подання нею декларації за минулий рік, пройшли тест на виявлення конфлікту інтересів, отримана інформація щодо наявності близьких осіб, роз'яснено та вручено попередження (додаток №1 до наказу №40 від 01.07.24)&rdquo;
+              </div>
+            </div>
+            
+            <div class="summary-block docs">
+              <div class="summary-block-title">
+                <i class="fas fa-file-signature"></i> Повинні бути оформлені документи з підписами новопризначеної особи (зберігаються в особовій справі):
+              </div>
+              <div class="summary-block-content">
+                <ol class="summary-doc-list">
+                  <li>Опитувальник щодо близьких осіб</li>
+                  <li>Додаток №1 до наказу №40 від 01.07.24</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part II Summary -->
+          <div class="summary-card">
+            <div class="summary-card-header">
+              <i class="fas fa-user-check"></i> ІІ. У перший робочий день працівника
+            </div>
+            
+            <div class="summary-block">
+              <div class="summary-block-title">
+                <i class="fas fa-pen-fancy"></i> У журналі інструктажів повинен бути запис:
+              </div>
+              <div class="summary-block-content" style="font-style: italic; background-color: rgba(139, 94, 60, 0.05); padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-md); border: 1px dashed rgba(203, 178, 156, 0.3);">
+                <p>&ldquo;Роз'яснені основні положення антикорупційного законодавства;</p>
+                <p>роз'яснені правила професійної етики;</p>
+                <p>ознайомлено з повідомленням (додаток №2 до наказу №40 від 01.07.2024);</p>
+                <p>ознайомлено з текстом пам'ятки (роз'ясненням) для новопризначених працівників;</p>
+                <p>ознайомлено з пам'яткою про використання державного майна;</p>
+                <p>ознайомлено з пам'яткою щодо персональних даних;</p>
+                <p>проінформовано про канали внутрішнього зв'язку;</p>
+                <p>інформовано про проходження курсу новопризначених.&rdquo;</p>
+              </div>
+            </div>
+            
+            <div class="summary-block docs">
+              <div class="summary-block-title">
+                <i class="fas fa-file-signature"></i> Повинні бути оформлені документи з підписами новопризначеної особи (зберігаються в особовій справі):
+              </div>
+              <div class="summary-block-content">
+                <ol class="summary-doc-list">
+                  <li>Повідомлення за формою, визначеною додатком до Наказу №312 (далі — Повідомлення №1)</li>
+                  <li>Повідомлення (Додаток 2 до Наказу №40 від 01.07.2024)</li>
+                  <li>Пам’ятка (роз’яснення) новопризначеного</li>
+                  <li>Пам’ятка про використання державного майна</li>
+                  <li>Пам’ятка про захист персональних даних</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional document section -->
+        <div class="additional-doc-card">
+          <i class="fas fa-file-alt"></i>
+          <div>
+            <strong>Додатковий документ:</strong> Біографія за встановленим зразком (редакція/форма від 05.02.2024).
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>

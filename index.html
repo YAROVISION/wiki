@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Довідник з заповнення граф звітності</title>
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Styling to overwrite defaults for the home page specifically */
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Full screen background image */
+    .bg-image-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('img/mainboard_background.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      opacity: 1;
+      transition: filter 0.3s ease;
+    }
+
+    .bg-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 30% 50%, rgba(28, 16, 10, 0.4) 0%, rgba(12, 6, 4, 0.85) 100%);
+      z-index: -1;
+      transition: background 0.3s ease;
+    }
+
+    /* Adjust overlay slightly for light theme to look clean and premium */
+    body.light-theme .bg-image-overlay {
+      background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(220, 205, 190, 0.85) 100%);
+    }
+
+    /* App container styling */
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Main content styling */
+    main.home-main {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start; /* Align content to the left of the screen */
+      align-items: center;
+      padding: var(--spacing-xl) 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Content section directly on page (no modal-like card) */
+    .content-section {
+      max-width: 680px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 10;
+      animation: fadeInUpContent 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Heading styling directly on background */
+    .landing-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    body.light-theme .landing-title {
+      color: var(--text-primary);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Subtitle description */
+    .landing-description {
+      font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 580px;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    body.light-theme .landing-description {
+      color: var(--text-primary);
+      text-shadow: none;
+      opacity: 0.9;
+    }
+
+    /* Links & Labels Section */
+    .links-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .inactive-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      opacity: 0.8;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      user-select: none;
+    }
+
+    body.light-theme .inactive-label {
+      color: var(--text-primary);
+      opacity: 0.7;
+      text-shadow: none;
+    }
+
+    .active-link-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    body.light-theme .active-link-row {
+      color: var(--text-primary);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .active-link-row i {
+      font-size: 1.2rem;
+      color: var(--color-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .active-link-row:hover {
+      color: var(--color-gold);
+      border-bottom: 2px solid var(--color-gold);
+      transform: translateX(4px);
+    }
+
+    body.light-theme .active-link-row:hover {
+      color: var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+    }
+
+    .active-link-row:hover i {
+      transform: translateX(6px);
+    }
+
+    /* Floating character overlay on the right */
+    .james-character {
+      position: absolute;
+      bottom: 0px;
+      right: 8%;
+      height: 85%;
+      width: auto;
+      max-width: 35%;
+      z-index: 5;
+      pointer-events: none;
+      user-select: none;
+      object-fit: contain; /* Запобігає розтягуванню */
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+      animation: floatJames 6s ease-in-out infinite, fadeInJames 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (max-width: 992px) {
+      .james-character {
+        display: none; /* Hide character on smaller screens */
+      }
+      main.home-main {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        justify-content: flex-start;
+      }
+      .content-section {
+        text-align: left;
+        align-items: flex-start;
+      }
+      .active-link-row {
+        font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUpContent {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInJames {
+      from {
+        opacity: 0;
+        transform: translateY(60px) translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+      }
+    }
+
+    @keyframes floatJames {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(0.8deg);
+      }
+    }
+
+    /* Cohesive footer alignment */
+    footer {
+      border-top: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      padding: var(--spacing-lg) var(--spacing-xl);
+      text-align: center;
+      font-size: 0.85rem;
+      background-color: var(--header-bg);
+      color: var(--text-secondary);
+      box-shadow: 0 -4px 20px var(--shadow-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fullscreen background -->
+  <div class="bg-image-container"></div>
+  <div class="bg-image-overlay"></div>
+
+  <div class="app-container">
+    <!-- Header (Identical to directory.html) -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content (directly layouted, not modal-like card) -->
+    <main class="home-main">
+      <div class="content-section">
+        <h2 class="landing-title">Довідник з заповнення граф звітності</h2>
+        <p class="landing-description">
+          Інтерактивний посібник, створений для допомоги у заповненні та перевірці граф звітності.
+        </p>
+        <div class="links-section">
+          <div class="inactive-label">Звіт з виконання заходів АП</div>
+          <a href="directory.html" class="active-link-row">
+            Додаток 1 (АП1) <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="links-section" style="margin-top: 25px;">
+          <div class="inactive-label">Звіт про результати роботи (РР)</div>
+          <a href="report.html" class="active-link-row">
+            Додаток 1 (РР1) <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="links-section" style="margin-top: 25px;">
+          <div class="inactive-label">FAQ та інструкції</div>
+          <a href="onboarding.html" class="active-link-row">
+            Інструктаж новопризначеного <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mascot James.png layered on top -->
+      <img class="james-character" src="img/James.png" alt="Mascot James">
+    </main>
+
+    <!-- Footer (Identical to directory.html) -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- Script for local snowflakes animation -->
+  <script src="js/snowflakes.js"></script>
+
+  <!-- In-page theme control script to work independently or load app state -->
+  <script>
+    // Theme Switch logic to match style.css variables
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>

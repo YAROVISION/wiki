@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Довідник показників звіту РР - Установа</title>
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover) !important;
+      transform: translateX(-4px);
+    }
+    
+    /* Highlight animation for scrolling search target */
+    @keyframes flashHighlight {
+      0% { background-color: var(--highlight-bg); }
+      100% { background-color: transparent; }
+    }
+    
+    .highlight-flash {
+      animation: flashHighlight 1.5s ease-out;
+      border-color: var(--color-accent) !important;
+      box-shadow: 0 0 15px rgba(139, 94, 60, 0.4) !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Back Link -->
+      <div style="margin-bottom: var(--spacing-md); text-align: left;">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> На головну
+        </a>
+      </div>
+
+      <!-- Document Banner -->
+      <section style="background-color: var(--surface-color); border-radius: var(--radius-lg); padding: var(--spacing-md) var(--spacing-lg); border: 1px solid rgba(203, 178, 156, var(--border-opacity)); box-shadow: 0 4px 10px var(--shadow-color); margin-bottom: var(--spacing-lg);">
+        <h2 style="font-size: 1.1rem; color: var(--color-accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">
+          <i class="fas fa-file-invoice"></i> Додаток 1 (РР1)
+        </h2>
+        <p style="font-size: 0.9rem; line-height: 1.4; color: var(--text-primary); font-weight: 500;">
+          Звіт за результатами діяльності
+        </p>
+      </section>
+
+      <!-- Quick Section Numbers Navigation -->
+      <section class="letters-navigation-panel" id="letters-nav-section" style="margin-bottom: var(--spacing-lg);">
+        <h3 class="nav-title"><i class="fas fa-compass"></i> Швидкий перехід за розділами звіту:</h3>
+        <div class="letters-container" id="letters-nav-container">
+          <!-- Populated dynamically by report_app.js -->
+        </div>
+      </section>
+
+      <!-- Search & Filters Controller Panel -->
+      <section class="control-panel">
+        <div class="search-filter-row" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+          <!-- Search box -->
+          <div class="search-box-wrapper" style="width: 100%;">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Пошук за номером показника або ключовим словом...">
+          </div>
+
+          <!-- Quick Category Filters -->
+          <div class="filters-group" style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <button class="filter-btn active" id="filter-all">Всі розділи</button>
+            <button class="filter-btn" id="filter-education">Навчання & Запобігання</button>
+            <button class="filter-btn" id="filter-whistleblowers">Викривачі & Повідомлення</button>
+            <button class="filter-btn" id="filter-declaring">Декларування & Перевірки</button>
+            <button class="filter-btn" id="filter-conflicts">Конфлікт інтересів & Етика</button>
+          </div>
+
+          <!-- View modes toggle buttons -->
+          <div class="view-actions" style="margin-left: auto;">
+            <button class="view-toggle-btn active" id="view-grid" title="Плитка">
+              <i class="fas fa-th-large"></i>
+            </button>
+            <button class="view-toggle-btn" id="view-table" title="Таблиця">
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Grid / Table View Container -->
+      <section id="results-container">
+        <!-- Rendered dynamically by report_app.js -->
+        <div style="display: flex; justify-content: center; padding: 50px;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- Details View Dialog/Modal Overlay -->
+  <div class="modal-overlay" id="details-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <div class="col-badge" id="modal-col-letter" style="width: auto; height: 36px; padding: 0 12px; font-size: 0.95rem; font-weight: 800; border-radius: var(--radius-md);">№ 1</div>
+          <h2 id="modal-title" style="font-size: 1.1rem; font-weight: 700; margin-left: 8px;">Деталі показника <span id="modal-col-index">Розділ 1</span></h2>
+        </div>
+        <button class="modal-close-btn" id="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <span class="modal-label">Категорія / Розділ звіту</span>
+          <span class="modal-value" id="modal-col-sub" style="font-weight: 700; color: var(--color-accent);">Основні заходи</span>
+        </div>
+        <div class="modal-section">
+          <span class="modal-label">Назва показника</span>
+          <span class="modal-value" id="modal-col-main">Опис показника</span>
+        </div>
+        <div class="modal-section" style="background-color: rgba(139, 94, 60, 0.08); padding: var(--spacing-sm) var(--spacing-md); border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+          <span class="modal-label">Методичні рекомендації щодо заповнення</span>
+          <span class="modal-value" id="modal-col-instruction" style="font-size: 0.9rem; font-weight: 500;">Текст рекомендації</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-btn" id="modal-copy-btn"><i class="far fa-copy"></i> Копіювати все</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">Повідомлення</div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top" title="Вгору">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Import JS scripts -->
+  <script src="report_app.js"></script>
+</body>
+</html>
