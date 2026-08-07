@@ -828,7 +828,6 @@ function renderGrid(data) {
     card.innerHTML = `
       <div class="card-header-row">
         <div class="col-badge" style="width: auto; height: auto; padding: 4px 10px; border-radius: var(--radius-md); font-size: 0.8rem; font-weight: 700; background-color: var(--color-accent); color: #F5EBE0; box-shadow: none;">Розділ ${getItemNum(col) || ''}</div>
-        <div class="col-index-tag" style="font-size: 0.75rem; border: none; background: transparent; padding: 0; color: var(--text-secondary); opacity: 0.6; font-weight: 700;">№ ${col.col_index}</div>
       </div>
       <div class="col-card-body">
         <div class="col-subtitle" style="font-size: 0.75rem; font-weight: 700; color: ${subtitleColor}; line-height: 1.3; margin-bottom: 6px;">${highlightedCat}</div>
