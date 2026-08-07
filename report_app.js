@@ -822,6 +822,8 @@ function renderGrid(data) {
     const highlightedCat = highlightText(col.category, state.searchTerm);
     const highlightedInstruction = highlightText(col.instruction, state.searchTerm);
 
+    const subtitleColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : 'var(--color-accent)';
+
     // Group indicators look beautiful with themed categories
     card.innerHTML = `
       <div class="card-header-row">
@@ -829,7 +831,7 @@ function renderGrid(data) {
         <div class="col-index-tag" style="font-size: 0.75rem; border: none; background: transparent; padding: 0; color: var(--text-secondary); opacity: 0.6; font-weight: 700;">№ ${col.col_index}</div>
       </div>
       <div class="col-card-body">
-        <div class="col-subtitle" style="font-size: 0.75rem; font-weight: 700; color: var(--color-accent); line-height: 1.3; margin-bottom: 6px;">${highlightedCat}</div>
+        <div class="col-subtitle" style="font-size: 0.75rem; font-weight: 700; color: ${subtitleColor}; line-height: 1.3; margin-bottom: 6px;">${highlightedCat}</div>
         <div class="col-title-text" style="margin-bottom: var(--spacing-sm); font-size: 0.95rem; font-weight: 600; line-height: 1.4;">${highlightedMain}</div>
         <div class="col-instruction-section">
           <div class="instruction-title">Рекомендація щодо заповнення:</div>
@@ -897,10 +899,11 @@ function renderTable(data) {
     const highlightedMain = highlightText(col.title_main, state.searchTerm);
     const highlightedCat = highlightText(col.category, state.searchTerm);
     const highlightedInstruction = highlightText(col.instruction, state.searchTerm);
+    const categoryColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : 'var(--color-accent)';
     
     tr.innerHTML = `
       <td style="white-space: nowrap; text-align: center;"><strong>${col.col_index}</strong></td>
-      <td style="font-size: 0.75rem; color: var(--color-accent); font-weight: 600;">${highlightedCat}</td>
+      <td style="font-size: 0.75rem; color: ${categoryColor}; font-weight: 600;">${highlightedCat}</td>
       <td><div class="col-title-text" style="font-size: 0.85rem; font-weight: 500;">${highlightedMain}</div></td>
       <td><div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; white-space: pre-line;">${highlightedInstruction}</div></td>
       <td style="text-align: center; white-space: nowrap;">
