@@ -586,7 +586,6 @@ const backToTopBtn = document.getElementById('back-to-top');
 // Modal Elements
 const modalOverlay = document.getElementById('details-modal');
 const modalClose = document.getElementById('modal-close');
-const modalColLetter = document.getElementById('modal-col-letter');
 const modalColIndex = document.getElementById('modal-col-index');
 const modalColMain = document.getElementById('modal-col-main');
 const modalColSub = document.getElementById('modal-col-sub');
@@ -934,7 +933,6 @@ function renderTable(data) {
 
 // Open details Modal
 function openDetails(col) {
-  modalColLetter.textContent = `№ ${col.col_index}`;
   modalColIndex.textContent = `Розділ ${getItemNum(col) || ''}`;
   modalColMain.textContent = col.title_main;
   modalColSub.textContent = col.category || 'Основні заходи';
