@@ -1,22 +1,13 @@
 // Columns data loaded from додаток_1.xlsx (РР)
 const COLUMNS_DATA = [
   {
-    "col_index": 1,
-    "col_letter": "РР_1",
+    "col_index": "1, 2",
+    "col_letter": "РР_1_2",
     "category": "1. Проведено навчань, семінарів, тренінгів з питань запобігання та виявлення корупції для працівників органів Установи**:",
-    "title_main": "кількість тем",
+    "title_main": "кількість тем / кількість заходів",
     "title_sub": "Результати роботи",
-    "full_title": "1. Проведено навчань, семінарів, тренінгів з питань запобігання та виявлення корупції для працівників органів Установи**: — кількість тем",
-    "instruction": "Вкажіть кількість для показника «кількість тем» (ціле число) за звітний період."
-  },
-  {
-    "col_index": 2,
-    "col_letter": "РР_2",
-    "category": "1. Проведено навчань, семінарів, тренінгів з питань запобігання та виявлення корупції для працівників органів Установи**:",
-    "title_main": "кількість заходів",
-    "title_sub": "Результати роботи",
-    "full_title": "1. Проведено навчань, семінарів, тренінгів з питань запобігання та виявлення корупції для працівників органів Установи**: — кількість заходів",
-    "instruction": "Вкажіть кількість для показника «кількість заходів» (ціле число) за звітний період."
+    "full_title": "1. Проведено навчань, семінарів, тренінгів з питань запобігання та виявлення корупції для працівників органів Установи**: — кількість тем / кількість заходів",
+    "instruction": "Вкажіть показники за звітний період:\n- кількість тем (ціле число);\n- кількість заходів (ціле число)."
   },
   {
     "col_index": 3,
@@ -911,7 +902,7 @@ function renderTable(data) {
       <td style="white-space: nowrap; text-align: center;"><strong>${col.col_index}</strong></td>
       <td style="font-size: 0.75rem; color: var(--color-accent); font-weight: 600;">${highlightedCat}</td>
       <td><div class="col-title-text" style="font-size: 0.85rem; font-weight: 500;">${highlightedMain}</div></td>
-      <td><div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">${highlightedInstruction}</div></td>
+      <td><div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; white-space: pre-line;">${highlightedInstruction}</div></td>
       <td style="text-align: center; white-space: nowrap;">
         <button class="table-action-btn copy-btn" data-text="${col.title_main}" title="Копіювати опис">
           <i class="far fa-copy"></i>
