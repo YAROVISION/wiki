@@ -12,8 +12,8 @@ const COLUMNS_DATA = [
   {
     "col_index": 3,
     "col_letter": "РР_3",
-    "category": "Основні заходи",
-    "title_main": "2. Кількість проведених семінарів, засідань круглих столів та нарад з питань запобігання та протидії корупції",
+    "category": "2. Кількість проведених семінарів, засідань круглих столів та нарад з питань запобігання та протидії корупції",
+    "title_main": "",
     "title_sub": "Результати роботи",
     "full_title": "2. Кількість проведених семінарів, засідань круглих столів та нарад з питань запобігання та протидії корупції",
     "instruction": "Вкажіть загальну кількість (ціле число) за звітний період."
@@ -578,7 +578,7 @@ function renderGrid(data) {
     const highlightedCat = highlightText(col.category, state.searchTerm);
     const highlightedInstruction = highlightText(col.instruction, state.searchTerm);
 
-    const subtitleColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : (([4, 5, 18, 22, 26, 27, 28, 29, 30, 31, 32, 39, 40, 48, 49, 56, 57, 58, 59, 60].includes(col.col_index) || ["6, 7, 8, 9", "10, 11, 12, 13", "14, 15, 16, 17", "19, 20, 21", "23, 24, 25", "33, 34, 35", "36, 37, 38", "41, 42, 43", "44, 45, 46, 47", "50, 51, 52, 53, 54, 55"].includes(col.col_index)) ? '#ffffff' : 'var(--color-accent)');
+    const subtitleColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : (([3, 4, 5, 18, 22, 26, 27, 28, 29, 30, 31, 32, 39, 40, 48, 49, 56, 57, 58, 59, 60].includes(col.col_index) || ["6, 7, 8, 9", "10, 11, 12, 13", "14, 15, 16, 17", "19, 20, 21", "23, 24, 25", "33, 34, 35", "36, 37, 38", "41, 42, 43", "44, 45, 46, 47", "50, 51, 52, 53, 54, 55"].includes(col.col_index)) ? '#ffffff' : 'var(--color-accent)');
 
     // Group indicators look beautiful with themed categories
     card.innerHTML = `
