@@ -634,10 +634,9 @@ function renderTable(data) {
   table.innerHTML = `
     <thead>
       <tr>
-        <th style="width: 1%; white-space: nowrap; text-align: center;">№</th>
         <th style="width: 15%; white-space: nowrap;">Розділ</th>
         <th style="width: 40%;">Показник</th>
-        <th style="width: 43%;">Рекомендація щодо заповнення</th>
+        <th style="width: 44%;">Рекомендація щодо заповнення</th>
         <th style="width: 1%; white-space: nowrap; text-align: center;">Дії</th>
       </tr>
     </thead>
@@ -657,7 +656,6 @@ function renderTable(data) {
     const categoryColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : 'var(--color-accent)';
     
     tr.innerHTML = `
-      <td style="white-space: nowrap; text-align: center;"><strong>${col.col_index}</strong></td>
       <td style="font-size: 0.75rem; color: ${categoryColor}; font-weight: 600;">${highlightedCat}</td>
       <td><div class="col-title-text" style="font-size: 0.85rem; font-weight: 500; white-space: pre-line;">${highlightedMain}</div></td>
       <td><div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; white-space: pre-line;">${highlightedInstruction}</div></td>
