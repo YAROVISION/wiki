@@ -467,7 +467,7 @@ function renderLettersNav() {
     a.style.height = '32px';
     a.style.fontSize = '0.9rem';
     
-    if (num === 14 || num === 16 || num === 30 || num === 31) {
+    if ([1, 14, 15, 16, 30, 31].includes(num)) {
       a.style.backgroundColor = 'var(--color-accent)';
       a.style.borderColor = 'var(--color-accent-hover)';
       a.style.color = '#FFFFFF';
