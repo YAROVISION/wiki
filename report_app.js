@@ -653,7 +653,7 @@ function renderTable(data) {
     const highlightedMain = highlightText(col.title_main, state.searchTerm);
     const highlightedCat = highlightText(col.category, state.searchTerm);
     const highlightedInstruction = highlightText(col.instruction, state.searchTerm);
-    const categoryColor = (col.col_index === "1, 2") ? 'var(--text-primary)' : 'var(--color-accent)';
+    const categoryColor = (state.theme === 'dark') ? '#ffffff' : 'var(--text-primary)';
     
     tr.innerHTML = `
       <td style="font-size: 0.75rem; color: ${categoryColor}; font-weight: 600;">${highlightedCat}</td>
