@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інструктаж адміністратора - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .instruction-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+    
+    .instruction-item {
+      background-color: rgba(139, 94, 60, 0.03);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    .instruction-item:hover {
+      background-color: rgba(139, 94, 60, 0.06);
+      transform: translateX(4px);
+    }
+    
+    .item-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--color-accent);
+      opacity: 0.8;
+      min-width: 2rem;
+    }
+    
+    .item-content {
+      flex: 1;
+    }
+    
+    .item-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .item-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-sm);
+      text-align: justify;
+    }
+    
+    .item-action {
+      background-color: rgba(139, 94, 60, 0.08);
+      border: 1px solid rgba(203, 178, 156, 0.2);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+    
+    .item-action strong {
+      color: var(--color-accent);
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .instruction-list {
+        display: block !important;
+      }
+      
+      .instruction-item {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 14px !important;
+        display: block !important;
+        margin-left: 0 !important;
+        page-break-inside: avoid;
+      }
+      
+      .item-number {
+        display: none !important;
+      }
+      
+      .item-content {
+        display: inline !important;
+      }
+      
+      .item-title {
+        font-family: 'Times New Roman', serif !important;
+        font-weight: bold !important;
+        font-size: 12pt !important;
+        color: #2d3748 !important;
+        display: inline !important;
+      }
+      
+      .item-title::after {
+        content: "\A";
+        white-space: pre;
+      }
+      
+      .item-desc {
+        font-family: 'Times New Roman', serif !important;
+        font-size: 12pt !important;
+        color: #2d3748 !important;
+        margin-top: 3px !important;
+        margin-bottom: 4px !important;
+        text-align: justify !important;
+        display: block !important;
+      }
+      
+      .item-action {
+        display: block !important;
+        background-color: #f7fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+        font-size: 10.5pt !important;
+        color: #4a5568 !important;
+        font-style: italic !important;
+        margin-top: 4px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .item-action strong {
+        color: #111111 !important;
+      }
+      
+      .additional-doc-card {
+        background: none !important;
+        border: none !important;
+        border-top: 1px solid #cbd5e0 !important;
+        border-radius: 0 !important;
+        padding: 12px 0 0 0 !important;
+        margin-top: 30px !important;
+        display: block !important;
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        page-break-inside: avoid;
+      }
+      
+      .additional-doc-card i {
+        display: none !important;
+      }
+      
+      .additional-doc-card strong {
+        color: #1a365d !important;
+      }
+      
+      /* Print Table View Styles */
+      .table-view-container {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow-x: visible !important;
+      }
+
+      table.columns-table {
+        min-width: 100% !important;
+        border-collapse: collapse !important;
+        page-break-inside: avoid;
+      }
+
+      table.columns-table th, table.columns-table td {
+        padding: 6px 10px !important;
+        border: 1px solid #cbd5e0 !important;
+        font-family: 'Times New Roman', serif !important;
+        font-size: 11pt !important;
+        color: #111111 !important;
+        height: auto !important;
+      }
+
+      table.columns-table th {
+        background-color: #edf2f7 !important;
+        font-weight: bold !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">ІНСТРУКТАЖ</h1>
+        <p class="subtitle">з посадовими особами (адміністраторами), відповідальними за надання кваліфікованих електронних довірчих послуг, щодо вимог, заборон та обмежень, встановлених Законом України «Про запобігання корупції» та положеннями розділу XVII Кримінального кодексу України</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title" style="font-size: 1.7rem; line-height: 1.3; margin-bottom: 12px;">ІНСТРУКТАЖ з посадовими особами (адміністраторами)</h2>
+        <p class="page-subtitle" style="font-weight: 500;">відповідальними за надання кваліфікованих електронних довірчих послуг, щодо вимог, заборон та обмежень, встановлених Законом України «Про запобігання корупції» та положеннями розділу XVII Кримінального кодексу України.</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Introduction -->
+        <div class="instruction-section-title">Вступ: Адміністратор як вартовий цифрової ідентифікації</div>
+        <p class="item-desc" style="text-align: justify; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+          У сучасній архітектурі цифрової держави адміністратори кваліфікованого електронного підпису (КЕП) виконують стратегічну роль «вартових» ідентифікації. Ваша діяльність — це не технічна рутина, а правовий фільтр, що забезпечує цілісність державних реєстрів та національну безпеку України. Будь-яка помилка, а тим паче свідоме зловживання у сфері видачі КЕП, створює ризики масштабного державного рівня — від рейдерства до кібертероризму.
+        </p>
+        <p class="item-desc" style="text-align: justify; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
+          Цей інструктаж є імперативним інструментом мінімізації правових ризиків. Ви зобов'язані усвідомити: суворе дотримання антикорупційних норм — це єдиний спосіб убезпечити себе від персональної кримінальної відповідальності та зберегти репутацію установи. Правовий комплаєнс починається з чіткого розуміння вашого статусу та обов'язків.
+        </p>
+
+        <!-- Section I -->
+        <div class="instruction-section-title">1. Розділ I. Правовий статус та загальні обов’язки адміністратора КЕП</div>
+        <p class="page-subtitle" style="margin-bottom: var(--spacing-md);">Діяльність у сфері довірчих послуг має виражений публічний характер. Відповідно до підпункту «б» пункту 2 частини першої статті 3 Закону України «Про запобігання корупції», адміністратори КЕП класифікуються як «особи, які не є державними службовцями, посадовими особами місцевого самоврядування, але надають публічні послуги». Ви входите до категорії «інші особи, визначені законом» у зв’язці із Законом України «Про електронні довірчі послуги».</p>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Етичні норми та правове охоплення</h4>
+              <p class="item-desc">На вас повною мірою поширюються обмеження, встановлені для осіб, уповноважених на виконання функцій держави. Згідно зі Статтею 38 Закону, ви зобов'язані дотримуватися етичних норм поведінки.</p>
+              <div class="item-action">
+                <strong>Базові принципи:</strong>
+                <ul style="margin-top: 5px; padding-left: 20px; list-style-type: disc;">
+                  <li><strong>Неупередженість:</strong> приймати рішення виключно на підставі закону, незважаючи на приватні інтереси чи тиск третіх осіб.</li>
+                  <li><strong>Чесність:</strong> категорично заборонено викривляти дані при ідентифікації заявника.</li>
+                  <li><strong>Пріоритет державних інтересів:</strong> дії мають бути спрямовані на захист суспільної довіри до цифрових сервісів.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section II -->
+        <div class="instruction-section-title">2. Розділ II. Антикорупційні вимоги, заборони та обмеження</div>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">2.1. Використання становища (Стаття 22)</h4>
+              <p class="item-desc">Вам категорично заборонено використовувати свої службові повноваження або своє становище та пов’язані з цим можливості з метою одержання неправомірної вигоди. Неправомірною вигодою є будь-які грошові кошти, майно, переваги, пільги чи послуги, отримані без законних підстав.</p>
+              <div class="item-action">
+                <strong>Заборона:</strong> Суворо заборонено використовувати державне майно (техніку, доступ до спеціалізованого ПЗ та баз даних) у приватних інтересах.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">2.2. Подарунки та гостинність (Стаття 23)</h4>
+              <p class="item-desc">Закон встановлює жорсткий режим обмеження подарунків. Будь-яке відхилення від цих норм автоматично розцінюється як корупційне правопорушення.</p>
+              
+              <div class="table-view-container" style="margin-top: 10px; margin-bottom: 10px;">
+                <table class="columns-table" style="min-width: 100%;">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%;">Категорія</th>
+                      <th style="width: 35%;">Характер обмеження</th>
+                      <th style="width: 40%;">Юридичні ліміти (згідно зі Ст. 23)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Повна заборона</strong></td>
+                      <td>Заборонено вимагати, просити чи одержувати</td>
+                      <td>Якщо подарунок пов'язаний з вашими службовими обов’язками або дарувальник є вашим підлеглим.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Дозволені подарунки</strong></td>
+                      <td>Відповідають уявленням про гостинність</td>
+                      <td>Не більше 1 прожиткового мінімуму (ПМ) для працездатних осіб на день прийняття подарунка (одноразово).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Річний ліміт</strong></td>
+                      <td>Сукупна вартість від однієї особи/групи</td>
+                      <td>Не більше 2 ПМ, встановлених для працездатної особи на 1 січня звітного року.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Винятки</strong></td>
+                      <td>Без обмеження вартості</td>
+                      <td>Подарунки від близьких осіб або загальнодоступні знижки/бонуси.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">2.3. Алгоритм дій при спробі підкупу та виявленні майна (Стаття 24)</h4>
+              <p class="item-desc">
+                У разі надходження пропозиції неправомірної вигоди, ви зобов’язані діяти за протоколом:<br>
+                1. Негайно відмовитися від пропозиції.<br>
+                2. За можливості ідентифікувати особу та залучити свідків (співробітників).<br>
+                3. Письмово повідомити керівника або НАЗК не пізніше наступного робочого дня.
+              </p>
+              <div class="item-action">
+                <strong>Дії при виявленні майна:</strong> Якщо ви виявили подарунок або майно у своєму службовому приміщенні (наприклад, залишений конверт), ви зобов’язані негайно (не пізніше одного робочого дня) письмово повідомити про це керівника. Про цей факт обов’язково складається акт.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section III -->
+        <div class="instruction-section-title">3. Розділ III. Запобігання та врегулювання конфлікту інтересів (Стаття 28)</div>
+        <p class="page-subtitle" style="margin-bottom: var(--spacing-md);">Ви зобов’язані вживати заходів щодо недопущення виникнення реального чи потенційного конфлікту інтересів. Згідно з законом, діють визначення:</p>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Типи конфліктів та правила повідомлення</h4>
+              <p class="item-desc">
+                <strong>Реальний конфлікт інтересів:</strong> суперечність між вашим приватним інтересом та повноваженнями, що впливає на об’єктивність рішень.<br>
+                <strong>Потенційний конфлікт інтересів:</strong> наявність приватного інтересу, що може вплинути на об’єктивність у майбутньому.
+              </p>
+              <div class="item-action">
+                <strong>Заборона щодо «Близьких осіб» (Стаття 1):</strong> Адміністратору заборонено проводити ідентифікацію та видавати КЕП особам, які згідно із законом є близькими (чоловік, дружина, батьки, діти, брати, сестри, діди, баби тощо, а також особи, які спільно проживають та пов'язані побутом). При виникненні конфлікту інтересів ви зобов’язані письмово повідомити керівника не пізніше наступного робочого дня.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section IV -->
+        <div class="instruction-section-title">4. Розділ IV. Фінансовий контроль та декларації (Стаття 45)</div>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Обов'язки щодо е-декларування</h4>
+              <p class="item-desc">Як особи, що надають публічні послуги, ви є суб'єктами декларування.</p>
+              <div class="item-action">
+                <strong>Дія:</strong> Ви зобов'язані подавати щорічну декларацію за минулий рік до 1 квітня та забезпечувати достовірність даних. Несвоєчасне подання декларації тягне за собою адміністративну відповідальність, а умисне неподання чи фальсифікація — кримінальну.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section V -->
+        <div class="instruction-section-title">5. Розділ V. Нерозголошення інформації та захист персональних даних</div>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">5.1. Конфіденційність (Стаття 43)</h4>
+              <p class="item-desc">Вам заборонено розголошувати або використовувати в інший спосіб конфіденційну інформацію, що стала відома у зв'язку з виконанням службових обов'язків.</p>
+              <div class="item-action">
+                <strong>Термін:</strong> Обов'язок діє також після припинення діяльності.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">5.2. Виконання вимог Закону «Про захист персональних даних»</h4>
+              <p class="item-desc">
+                Згідно зі Статтями 6, 10 та 24 Закону, на вас покладаються такі обов’язки:<br>
+                <strong>Цільове використання (Ст. 6):</strong> Обробка даних заявників дозволена виключно для конкретних і законних цілей (випуск КЕП). Будь-яке інше використання — незаконне.<br>
+                <strong>Обмеження використання (Ст. 10):</strong> Доступ до даних дозволено лише в межах професійних обов'язків. Вам категорично заборонено копіювати документи заявників «для себе» або передавати їх третім особам. Цей обов'язок діє і після вашого звільнення.
+              </p>
+              <div class="item-action">
+                <strong>Технічний захист (Ст. 24):</strong> Ви зобов’язані забезпечувати такий рівень зберігання документів та скан-копій, який унеможливлює випадкову втрату або незаконний доступ до них.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section VI -->
+        <div class="instruction-section-title">6. Розділ VI. Кримінальна відповідальність за службові злочини (Розділ XVII ККУ)</div>
+        <p class="page-subtitle" style="margin-bottom: var(--spacing-md);">Кримінальний закон передбачає суворе покарання за злочини у сфері службової діяльності:</p>
+        <ol class="instruction-list">
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Стаття 364 (Зловживання владою)</h4>
+              <p class="item-desc">Використання повноважень всупереч інтересам служби з корисливих мотивів.</p>
+              <div class="item-action">
+                <strong>Умова:</strong> Відповідальність настає, якщо завдано істотну шкоду (що у 100 і більше разів перевищує неоподатковуваний мінімум доходів громадян).
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Стаття 366 (Службове підроблення)</h4>
+              <p class="item-desc">Внесення неправдивих відомостей до офіційних документів.</p>
+              <div class="item-action">
+                <strong>Кваліфікація:</strong> Кваліфікований сертифікат відкритого ключа є офіційним документом. Його видача на підставну особу — це тяжкий злочин.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Стаття 367 (Службова недбалість)</h4>
+              <p class="item-desc">Неналежне виконання обов'язків через несумлінність.</p>
+              <div class="item-action">
+                <strong>Приклад:</strong> Якщо ви видали КЕП без належної перевірки паспорта, і це призвело до збитків у 100+ разів більше ПМ (істотна шкода) або у 250+ разів (тяжкі наслідки) — ви підлягаєте суду.
+              </div>
+            </div>
+          </li>
+          
+          <li class="instruction-item">
+            <div class="item-content">
+              <h4 class="item-title">Стаття 368 (Одержання неправомірної вигоди)</h4>
+              <p class="item-desc">Прийняття хабаря у будь-якій формі за дії з використанням вашого становища.</p>
+              <div class="item-action">
+                <strong>Санкція:</strong> Позбавлення волі із конфіскацією та забороною обіймати посади.
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Section VII -->
+        <div class="instruction-section-title">7. Лист ознайомлення з Інструктажем</div>
+        <p class="page-subtitle" style="margin-bottom: var(--spacing-md);">Підпис у цій формі підтверджує, що адміністратор повністю ознайомлений зі своїми правами, обов’язками та юридичними наслідками порушення антикорупційного законодавства та правил захисту персональних даних.</p>
+        
+        <div class="table-view-container" style="margin-top: 15px; margin-bottom: 25px;">
+          <table class="columns-table" style="min-width: 100%;">
+            <thead>
+              <tr>
+                <th style="width: 60px; text-align: center;">№ з/п</th>
+                <th>Прізвище, ім’я, по батькові посадової особи</th>
+                <th>Посада</th>
+                <th style="width: 180px;">Дата ознайомлення</th>
+                <th style="width: 150px;">Підпис</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center;">1</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">2</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">3</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">4</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">5</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">6</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">7</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">8</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">9</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">10</td>
+                <td style="height: 35px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Підпис підтверджує повне розуміння адміністратором персональної відповідальності за порушення антикорупційних вимог та норм кримінального права.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
