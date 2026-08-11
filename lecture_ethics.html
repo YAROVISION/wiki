@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила етичної поведінки (Оновлена версія — 2026 рік) - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-xs);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .table-view-container {
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      }
+
+      table.columns-table {
+        min-width: 100% !important;
+      }
+
+      table.columns-table th, table.columns-table td {
+        border: 1px solid #cbd5e0 !important;
+        font-size: 11pt !important;
+        padding: 6px 10px !important;
+      }
+      
+      table.columns-table th {
+        background-color: #edf2f7 !important;
+        color: #111111 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МАТЕРІАЛИ НАВЧАННЯ</h1>
+        <p class="subtitle">«Правила етичної поведінки осіб, уповноважених на виконання функцій держави» (Оновлена версія — 2026 рік)</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title">Правила етичної поведінки осіб, уповноважених на виконання функцій держави</h2>
+        <p class="page-subtitle" style="font-weight: 500;">(Оновлена версія — 2026 рік)</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-shield-alt"></i> Запобігання корупції</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Updates Info Box -->
+        <div class="callout-box" style="margin-bottom: var(--spacing-lg); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; color: var(--color-accent);">
+            <i class="fas fa-sync-alt"></i> ДОВІДКА ПРО ОНОВЛЕННЯ (2025–2026 рр.):
+          </strong>
+          <p class="text-paragraph" style="margin-bottom: 8px; font-size: 0.9rem;">
+            Цей навчальний матеріал було повністю актуалізовано станом на 2026 рік відповідно до останніх реформ у законодавстві України про державну службу та запобігання корупції. Зокрема, інтегровано останні зміни до Загальних правил етичної поведінки (наказ НАДС від 20 серпня 2025 р. № 116-25):
+          </p>
+          <ol style="margin-left: 20px; font-size: 0.9rem; color: var(--text-primary); line-height: 1.5;">
+            <li>Етичне та відповідальне використання штучного інтелекту (ШІ).</li>
+            <li>Виявлення поваги до особистої гідності, життєвого шляху та бойового досвіду ветеранів та ветеранок.</li>
+            <li>Впровадження інклюзивності, безбар'єрності та безперешкодного доступу для осіб з інвалідністю та ВПО.</li>
+            <li>Пряма заборона поширення мови ворожнечі (hate speech).</li>
+            <li>Підвищення рівня володіння англійською мовою відповідно до євроінтеграційних вимог.</li>
+            <li>Повага до регіональної та місцевої символіки територіальних громад.</li>
+            <li>Запровадження стандартів спрощеного читання (easy-to-read) для забезпечення доступності інформації.</li>
+          </ol>
+        </div>
+
+        <!-- Introduction -->
+        <p class="text-paragraph">
+          Правила етичної поведінки осіб, уповноважених на виконання функцій держави (надалі – Правила) є узагальненим зібранням професійно-етичних вимог щодо правил поведінки державних службовців та посадових осіб місцевого самоврядування, діяльність яких спрямована на служіння народу України і територіальній громаді шляхом забезпечення охорони та сприяння у реалізації прав, свобод і законних інтересів людини і громадянина.
+        </p>
+        <p class="text-paragraph">
+          Правила ґрунтуються на положеннях Конституції України, законодавства про державну службу, службу в органах місцевого самоврядування, у сфері запобігання корупції, запобігання та протидії дискримінації, з питань забезпечення рівних прав та можливостей жінок і чоловіків. Метою Правил є зміцнення авторитету державної служби та служби в органах місцевого самоврядування, формування позитивної репутації державних службовців та посадових осіб місцевого самоврядування, а також забезпечення інформування громадян про норми етичної поведінки державних службовців та посадових осіб місцевого самоврядування стосовно них.
+        </p>
+        <p class="text-paragraph">
+          При прийнятті на державну службу або на службу в органи місцевого самоврядування особа ознайомлюється з цими Правилами. Відмітка про таке ознайомлення додається до особової справи державного службовця чи посадової особи місцевого самоврядування. Керівники державних органів, органів місцевого самоврядування чи їх структурних підрозділів у разі виявлення чи отримання повідомлення про порушення цих Правил в межах своєї компетенції відповідно до законодавства зобов'язані вжити заходів щодо припинення виявленого порушення, усунення його наслідків та притягнення винних осіб до дисциплінарної відповідальності, а у випадках виявлення ознак кримінального або адміністративного правопорушення також поінформувати спеціально уповноважених суб'єктів у сфері протидії корупції.
+        </p>
+
+        <!-- Section I -->
+        <div class="instruction-section-title">I. Загальні обов'язки державного службовця та посадової особи місцевого самоврядування</div>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування під час виконання своїх посадових обов'язків зобов'язані неухильно дотримуватись загальновизнаних етичних норм поведінки, бути доброзичливими та ввічливими, дотримуватись високої культури спілкування, з повагою ставитись до прав, свобод та законних інтересів людини і громадянина, об'єднань громадян, інших юридичних осіб.
+        </p>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування своєю поведінкою мають зміцнювати авторитет державної служби і служби в органах місцевого самоврядування, а також позитивну репутацію державних органів та органів місцевого самоврядування. Вони повинні проявляти стриманість у разі критики чи образ з боку громадян, зауважувати щодо неприйнятності такої поведінки і необхідності дотримання норм ввічливого спілкування.
+        </p>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування, у тому числі в позаробочий час, повинні утримуватися від поширення інформації, зокрема розміщення коментарів на веб-сайтах і у соціальних мережах, що можуть завдати шкоди репутації державних органів та органів місцевого самоврядування.
+        </p>
+
+        <!-- Requirements Table -->
+        <div class="instruction-section-title" style="font-size: 1.1rem; margin-top: var(--spacing-lg);">Ключові вимоги та обмеження щодо поведінки</div>
+        
+        <div class="table-view-container" style="margin: var(--spacing-sm) 0 var(--spacing-lg) 0;">
+          <table class="columns-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">Сфера обов'язків / обмежень</th>
+                <th style="width: 70%;">Конкретна вимога або заборона (з урахуванням оновлень 2025–2026 рр.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Етичні стандарти у спілкуванні</td>
+                <td>Забороняється використання нецензурної лексики, підвищеної інтонації. Обов'язкове дотримання високої культури спілкування, ввічливості та доброзичливості у стосунках із громадянами та колегами.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Запобігання конфліктам та чуткам</td>
+                <td>Забороняється поширення чуток, обговорення особистого або сімейного життя колег, членів їх сімей. Слід уникати впливу приватних, сімейних чи суспільних інтересів на прийняття рішень.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Протидія дискримінації та мові ворожнечі</td>
+                <td>Забороняється будь-яка форма дискримінації (за ознаками раси, кольору шкіри, статі, віку, інвалідності тощо), принизливі коментарі щодо зовнішності та одягу. Прямо заборонено поширення мови ворожнечі (hate speech).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Протидія сексуальному домаганню</td>
+                <td>Суворо заборонені будь-які дії сексуального характеру, виражені словесно (погрози, залякування, непристойні зауваження) або фізично (доторкання, поплескування), які принижують гідність осіб.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">
+                  <span class="new-badge">Нова вимога</span><br>Повага до ветеранів, ветеранок та постраждалих від війни
+                </td>
+                <td>Зобов'язання виявляти особливу повагу до особистої гідності, життєвого шляху та бойового досвіду ветеранів та ветеранок, публічно визнавати їх внесок у захист України. Належне та шанобливе ставлення до осіб з інвалідністю, ВПО та громадян, які проживали / проживають на ТОТ або в зоні бойових дій.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">
+                  <span class="new-badge">Нова вимога</span><br>Використання технологій Штучного Інтелекту (ШІ)
+                </td>
+                <td>Етичне, відповідальне та обережне використання інструментів ШІ під час виконання службових обов'язків. Державний службовець несе особисту відповідальність за перевірку достовірності та безпеки даних, створених за допомогою ШІ.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">
+                  <span class="new-badge">Нова вимога</span><br>Професійний розвиток та мовна компетентність
+                </td>
+                <td>Зобов'язання постійно підвищувати культурний і професійний рівень, зокрема в частині цифрової грамотності. Розвиток навичок англійської або іншої іноземної мови, необхідної для виконання службових обов'язків у межах євроінтеграції.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">
+                  <span class="new-badge">Нова вимога</span><br>Державні символи та регіональна символіка
+                </td>
+                <td>Зобов'язання поважати державні символи України, використовувати та підвищувати рівень володіння державною мовою. Прояв належної поваги до регіональної та місцевої символіки територіальних громад.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Офіційно-діловий стиль</td>
+                <td>Одяг повинен бути офіційно-ділового стилю і відповідати загальноприйнятим вимогам пристойності. Необхідно шанувати народні звичаї і національні традиції.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Повідомлення про порушення</td>
+                <td>У разі виявлення фактів порушення Правил (дискримінація, домагання, недоброчесність) службовець повинен негайно повідомити безпосереднього керівника або керівника вищого рівня.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section II -->
+        <div class="instruction-section-title">II. Доброчесність</div>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування зобов'язані виконувати свої посадові обов'язки якнайкраще, чесно і неупереджено, незважаючи на особисті ідеологічні, релігійні або інші погляди, не надавати будь-яких переваг та не виявляти прихильність до окремих фізичних чи юридичних осіб, громадських, політичних, релігійних організацій, а також не допускати ухилення від прийняття рішень та відповідальності за свої дії (бездіяльність) та рішення.
+        </p>
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-sm);">
+          Державний службовець та особа місцевого самоврядування зобов'язані діяти доброчесно, а саме:
+        </p>
+        <div class="list-item"><i class="fas fa-check" style="color: var(--color-accent); margin-right: 8px;"></i> спрямовувати свої дії на захист публічних інтересів та недопущення конфлікту між приватними та публічними інтересами, уникати виникнення реального та потенційного конфлікту інтересів у своїй діяльності;</div>
+        <div class="list-item"><i class="fas fa-check" style="color: var(--color-accent); margin-right: 8px;"></i> не використовувати службове становище в приватних інтересах чи в неправомірних приватних інтересах інших осіб, у тому числі не використовувати свій статус та інформацію про місце роботи з метою одержання неправомірної вигоди для себе чи інших осіб;</div>
+        <div class="list-item"><i class="fas fa-check" style="color: var(--color-accent); margin-right: 8px;"></i> не розголошувати інформацію, що стала відома у зв'язку з виконанням посадових обов'язків, зокрема персональні дані фізичних осіб, конфіденційну та іншу інформацію з обмеженим доступом, режим якої встановлено законами України «Про державну таємницю», «Про інформацію», «Про захист персональних даних» та «Про доступ до публічної інформації», крім випадків, установлених законом.</div>
+
+        <!-- Section III -->
+        <div class="instruction-section-title">III. Використання службового становища, ресурсів та інформації</div>
+        <p class="text-paragraph">
+          Державний службовець та посадова особа місцевого самоврядування повинні використовувати своє службове становище, ресурси держави та територіальної громади (рухоме та нерухоме майно, кошти, службову інформацію, технології, інтелектуальну власність, робочий час, репутацію тощо) виключно для виконання своїх посадових обов'язків і доручень керівників, наданих на підставі та у межах повноважень, передбачених Конституцією та законами України.
+        </p>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування у своїй діяльності зобов'язані дотримуватись політичної неупередженості та нейтральності, а саме уникати демонстрації у будь-кому вигляді власних політичних переконань або поглядів. Заборонено у будь-який спосіб використовувати своє службове становище в політичних цілях, у тому числі для залучення державних службовців, посадових осіб місцевого самоврядування, працівників бюджетної сфери та інших осіб до участі у передвиборній агітації, акціях та заходах, що організовуються політичними партіями.
+        </p>
+        
+        <div class="callout-box" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 4px; font-family: 'Montserrat', sans-serif;"><i class="fas fa-info-circle"></i> Примітка щодо політичної нейтральності (Оновлення 2025 р.):</strong>
+          Законодавчі зміни містять уточнюючі положення, які скасовують вимогу щодо політичної нейтральності для виборних посад в органах місцевого самоврядування, водночас залишаючи її абсолютно суворою та обов'язковою для класичних державних службовців (призначуваних посад).
+        </div>
+
+        <p class="text-paragraph">
+          При виконанні своїх посадових обов'язків державні службовці та посадові особи місцевого самоврядування зобов'язані раціонально і дбайливо використовувати державну і комунальну власність, постійно підвищувати ефективність її використання, уникаючи надмірних і непотрібних витрат. Вони також зобов'язані використовувати надані їм ресурси таким чином, щоб не завдавати шкоди навколишньому середовищу чи здоров'ю людей.
+        </p>
+        <p class="text-paragraph">
+          Робочий час державного службовця та посадової особи місцевого самоврядування, зокрема у разі виконання завдань за посадою за межами адміністративної будівлі державного органу чи дистанційної роботи, має використовуватись виключно для виконання своїх посадових обов'язків.
+        </p>
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування зобов'язані при роботі з інформацією оцінювати її критично, аналізувати джерела інформації, використовувати ті із них, які є офіційними, приймати рішення на основі достовірної та перевіреної інформації, поширювати лише ту інформацію, що відповідає дійсності. Забороняється приховувати чи обмежувати інформацію, яка має бути доведена до відома інших осіб.
+        </p>
+
+        <!-- Section IV -->
+        <div class="instruction-section-title">IV. Обмін інформацією та доступність</div>
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-sm);">
+          Державні службовці та посадові особи місцевого самоврядування при спілкуванні під час виконання посадових обов'язків повинні дотримуватися таких правил:
+        </p>
+        <div class="list-item"><i class="fas fa-info" style="color: var(--color-accent); margin-right: 12px; width: 10px; text-align: center;"></i> надавати інформацію із зазначенням даних, що її підтверджують;</div>
+        <div class="list-item"><i class="fas fa-info" style="color: var(--color-accent); margin-right: 12px; width: 10px; text-align: center;"></i> надавати в межах повноважень та відповідно до законодавства іншим державним службовцям та посадовим особам місцевого самоврядування інформацію, необхідну для виконання ними посадових обов'язків;</div>
+        <div class="list-item"><i class="fas fa-info" style="color: var(--color-accent); margin-right: 12px; width: 10px; text-align: center;"></i> викладати інформаційні матеріали та повідомлення чітко, лаконічно та послідовно для однозначного їх сприйняття.</div>
+        
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);">
+          Під час спілкування з громадянами державні службовці та посадові особи місцевого самоврядування повинні використовувати доступну термінологію.
+        </p>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 4px; font-family: 'Montserrat', sans-serif;"><i class="fas fa-universal-access"></i> Важливе доповнення щодо доступності (2025–2026 рр.):</strong>
+          Забезпечення доступності інформації здійснюється з урахуванням урядових рекомендацій щодо її викладення у форматах, які сприяють доступному сприйняттю (зокрема, використання шрифтів без зарубок, альтернативного текстового опису для візуальних елементів та стандартів спрощеної мови Easy-to-Read).
+        </div>
+
+        <p class="text-paragraph">
+          Державні службовці та посадові особи місцевого самоврядування повинні дотримуватися встановленого протоколу у відносинах з представниками органів влади іноземних держав, міжнародних організацій, іноземних установ.
+        </p>
+
+        <!-- Section V -->
+        <div class="instruction-section-title">V. Концептуальні підходи до вирішення етичних дилем</div>
+        <p class="text-paragraph">
+          Згідно з оновленими стандартами НАДС, етична дилема — це ситуація складного вибору, в якій виникає суперечність між різними етичними цінностями, професійними обов'язками чи приватними інтересами, і де прийняття будь-якого рішення може призвести до порушення однієї з етичних норм.
+        </p>
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-sm);">
+          Для розв'язання етичних дилем державний службовець має застосовувати послідовний алгоритм дій:
+        </p>
+        <div class="list-item"><strong>1. Ідентифікація дилеми:</strong> усвідомлення наявності конфлікту цінностей або зобов'язань;</div>
+        <div class="list-item"><strong>2. Аналіз альтернатив:</strong> оцінка можливих варіантів дій з точки зобов'язань публічної служби та суспільного інтересу;</div>
+        <div class="list-item"><strong>3. Пріоритет загального блага:</strong> забезпечення безумовного домінуючого значення публічних інтересів над приватними;</div>
+        <div class="list-item"><strong>4. Консультація з уповноваженою особою:</strong> звернення за роз'ясненням до уповноваженої особи з питань запобігання корупції або безпосереднього керівника.</div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення Правил тягне за собою дисциплінарну відповідальність згідно із Законом України «Про державну службу».
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
