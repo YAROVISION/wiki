@@ -433,10 +433,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
-      <div style="margin-top: var(--spacing-sm); display: flex; justify-content: center; align-items: center;">
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwiki.lexis.blog&count_bg=%238B5E3C&title_bg=%232C1A11&icon=&icon_color=%23E7E7E7&title=відвідувачі&edge_flat=false" alt="Hits Counter">
-      </div>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
     </footer>
   </div>
 
@@ -468,6 +465,22 @@
       const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
       applyTheme(currentTheme);
     });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
   </script>
 </body>
 </html>
