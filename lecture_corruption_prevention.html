@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Питання організації діяльності уповноважених осіб - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .table-view-container {
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      }
+
+      table.columns-table {
+        min-width: 100% !important;
+      }
+
+      table.columns-table th, table.columns-table td {
+        border: 1px solid #cbd5e0 !important;
+        font-size: 11pt !important;
+        padding: 6px 10px !important;
+      }
+      
+      table.columns-table th {
+        background-color: #edf2f7 !important;
+        color: #111111 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МЕТОДИЧНІ ТА НАВЧАЛЬНІ МАТЕРІАЛИ</h1>
+        <p class="subtitle">Організація діяльності уповноважених осіб з питань запобігання та виявлення корупції в органах державної влади (з урахуванням змін антикорупційного законодавства станом на 2026 рік)</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title">Організація діяльності уповноважених осіб з питань запобігання та виявлення корупції в органах державної влади</h2>
+        <p class="page-subtitle" style="font-weight: 500;">(з урахуванням змін антикорупційного законодавства станом на 2026 рік)</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-shield-alt"></i> Запобігання корупції</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="instruction-section-title">1. Організаційно-правові засади діяльності уповноважених осіб</div>
+        <p class="text-paragraph">
+          Організація антикорупційної діяльності в державних органах базується на положеннях статті 13-1 Закону України «Про запобігання корупції». Відповідно до цієї норми, уповноважені підрозділи (уповноважені особи) з питань запобігання та виявлення корупції утворюються (визначаються) у державних органах, органах влади Автономної Республіки Крим, органах місцевого самоврядування, територіальних органах та на підприємствах, в установах і організаціях, що належать до сфери управління державних органів. Головною метою їх функціонування є організація, координація та здійснення практичних заходів із запобігання та виявлення корупційних правопорушень.
+        </p>
+        <p class="text-paragraph">
+          Згідно з оновленим законодавством та діючим Типовим положенням (затвердженим наказом НАЗК від 27.05.2021 № 277/21 із змінами, внесеними наказом НАЗК від 04.08.2023 № 169/23), антикорупційні уповноважені отримали суттєве посилення гарантій незалежності та додаткові важелі впливу:
+        </p>
+        <div class="list-item">
+          <i class="fas fa-shield-alt" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Координуюча роль:</strong> Уповноважені особи загальнодержавних органів мають пряму координуючу роль щодо аналогічних підрозділів у територіальних органах та підвідомчих юридичних особах.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-shield-alt" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Листування та запити за власним підписом:</strong> Уповноважені отримали право за власним підписом вести офіційне листування зі спеціально уповноваженими суб'єктами у сфері протидії корупції (НАЗК, НАБУ тощо) та надсилати запити до відповідних структурних підрозділів.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-shield-alt" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Право опитування посадовців:</strong> Антикорупційні уповноважені мають право викликати та опитувати осіб, дії або бездіяльність яких стосується виявлених фактів порушень, включаючи керівників органу та їх заступників.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-shield-alt" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Згода НАЗК на звільнення:</strong> Керівники уповноважених підрозділів державних органів, юрисдикція яких поширюється на всю територію України, не можуть бути звільнені чи переведені на іншу посаду без попередньої згоди НАЗК (згідно з наказом НАЗК від 21.05.2021 № 268/21).
+        </div>
+
+        <!-- Section 2 -->
+        <div class="instruction-section-title">2. Чинні обмеження та заборони для державних службовців</div>
+        <p class="text-paragraph">
+          Закон України «Про запобігання корупції» та Закон України «Про державну службу» встановлюють сувору систему обмежень для публічних службовців з метою недопущення конфлікту інтересів та неправомірного використання службового становища:
+        </p>
+        <div class="list-item">
+          <i class="fas fa-ban" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Обмеження щодо використання повноважень (ст. 22):</strong> Забороняється використовувати свої службове повноваження або становище та пов'язані з цим можливості з метою одержання неправомірної вигоди для себе чи інших осіб.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-ban" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Обмеження щодо одержання подарунків (ст. 23):</strong> Публічним службовцям заборонено безпосередньо або через інших осіб одержувати подарунки у зв'язку із здійсненням діяльності, пов'язаної з виконанням функцій держави або місцевого самоврядування. Подарунки від близьких осіб або як прояв гостинності дозволяються лише у встановлених законом межах (не більше 1 прожиткового мінімуму одноразово та 2 прожиткових мінімумів сукупно за рік, окрім близьких осіб).
+        </div>
+        <div class="list-item">
+          <i class="fas fa-ban" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Запобігання сумісництву та суміщенню (ст. 25):</strong> Забороняється займатися іншою оплачуваною (крім викладацької, наукової і творчої діяльності, медичної практики, інструкторської та суддівської практики із спорту) або підприємницькою діяльністю, якщо інше не передбачено Конституцією або законами України (з урахуванням певних винятків для військовослужбовців або осіб у зоні бойових дій під час воєнного стану, роз'яснених НАЗК у 2024–2025 роках).
+        </div>
+        <div class="list-item">
+          <i class="fas fa-ban" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Обмеження після припинення діяльності (ст. 26):</strong> Протягом одного року після звільнення забороняється укладати трудові договори або вчиняти правочини з юридичними особами приватного права, якщо служба здійснювала контроль або нагляд за ними, а також розголошувати конфіденційну інформацію.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-ban" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Обмеження спільної роботи близьких осіб (ст. 27 Закону, ст. 32 Закону «Про державну службу»):</strong> Державні службовці не можуть мати у прямому підпорядкуванні близьких їм осіб або бути прямо підпорядкованими у зв'язку з виконанням повноважень близьким особам. У разі виникнення таких обставин, особи зобов'язані повідомити керівництво та усунути їх у 15-денний строк, інакше заходи вживаються керівником у місячний строк (переведення або звільнення).
+        </div>
+
+        <!-- Section 3 -->
+        <div class="instruction-section-title">3. Фінансовий контроль та спеціальні перевірки: відновлення обов'язкових механізмів</div>
+        <p class="text-paragraph">
+          Після зупинення антикорупційних механізмів на початку повномасштабного вторгнення у 2022 році, Законом України № 3384-IX (набрав чинності 12 жовтня 2023 року) було повністю відновлено електронне декларування публічних службовців, проведення спеціальних перевірок та заходи фінансового контролю:
+        </p>
+        <div class="list-item">
+          <i class="fas fa-check-double" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Електронне декларування:</strong> Відновлено щорічне подання декларацій до Єдиного державного реєстру декларацій (до 1 квітня за минулий рік). Всі декларації за 2021–2022 роки мали бути подані до 31 січня 2024 року. Впроваджено логічний та арифметичний контроль із визначенням показників ризику для відбору декларацій на повну перевірку.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-check-double" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Повідомлення про суттєві зміни (ПСЗ):</strong> Обов'язок подання повідомлень про суттєві зміни в майновому стані (отримання доходу, придбання майна або витрати на суму, що перевищує 50 прожиткових мінімумів) діє для посадовців, які займають відповідальне та особливо відповідальне становище, або обіймають посади з високим/підвищеним рівнем ризиків. Строк подання — 10 календарних днів з моменту отримання/витрати.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-check-double" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Повне відновлення спеціальних перевірок:</strong> Спеціальні перевірки при призначенні на посади відновлено у повному обсязі з 12 жовтня 2023 року (постанова КМУ від 25.03.2015 № 171). Кандидати та особи, призначені у період дії воєнного стану без спецперевірок, зобов'язані були подати всі необхідні документи до 31 січня 2024 року під загрозою звільнення.
+        </div>
+        <div class="list-item">
+          <i class="fas fa-check-double" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Новий перелік посад з високим рівнем ризиків:</strong> Замість застарілого Рішення НАЗК № 2 діє новий Наказ НАЗК від 06.11.2023 № 249/23 (набрав чинності 13.12.2023). Цим наказом суттєво розширено коло посадових осіб із високим рівнем корупційних ризиків, до якого тепер входять: працівники Офісу Президента України (зокрема, держслужбовці категорії «В»), заступники голів місцевих державних адміністрацій, керівники та заступники територіальних центрів комплектування та соціальної підтримки (ТЦК та СП), члени державних колегіальних органів та наглядових рад держпідприємств.
+        </div>
+
+        <!-- Section 4 -->
+        <div class="instruction-section-title">4. Систематизований перелік чинного законодавства та роз'яснень</div>
+        <p class="text-paragraph">
+          Нижче наведено актуальний перелік нормативно-правових актів та методичних документів НАЗК, якими керуються уповноважені особи у своїй діяльності станом на 2026 рік:
+        </p>
+        
+        <div class="table-view-container" style="margin: var(--spacing-sm) 0 var(--spacing-lg) 0;">
+          <table class="columns-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Категорія</th>
+                <th style="width: 40%;">Назва та реквізити нормативного акту / роз'яснення</th>
+                <th style="width: 35%;">Сфера регулювання та практичне значення</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Закони України</td>
+                <td style="font-weight: 600;">Закон України «Про запобігання корупції» від 14.10.2014 № 1700-VII</td>
+                <td>Базовий закон, що визначає поняття конфлікту інтересів, обмежень, вимог етики, захисту викривачів та фінансового контролю.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Закони України</td>
+                <td style="font-weight: 600;">Закон України «Про державну службу» від 10.12.2015 № 889-VIII</td>
+                <td>Регулює статус держслужбовців, дисциплінарну відповідальність за корупційні порушення, обмеження спільної роботи близьких осіб (ст. 32).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Закони України</td>
+                <td style="font-weight: 600;">Закон України № 3384-IX від 20.09.2023</td>
+                <td>Закон про відновлення декларування та проведення спеціальних перевірок в умовах воєнного стану.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Постанови КМУ</td>
+                <td style="font-weight: 600;">Постанова КМУ від 25.03.2015 № 171</td>
+                <td>Регулює порядок проведення спеціальних перевірок кандидатів на посади відповідального або особливо відповідального становища.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Постанови КМУ</td>
+                <td style="font-weight: 600;">Постанова КМУ від 13.06.2000 № 950</td>
+                <td>Порядок проведення службових розслідувань стосовно осіб, уповноважених на виконання функцій держави.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Накази НАЗК</td>
+                <td style="font-weight: 600;">Наказ НАЗК від 27.05.2021 № 277/21 (із змінами від 04.08.2023 № 169/23)</td>
+                <td>Затверджує Типове положення про уповноважений підрозділ (особу) з питань запобігання та виявлення корупції.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Накази НАЗК</td>
+                <td style="font-weight: 600;">Наказ НАЗК від 06.11.2023 № 249/23</td>
+                <td>Чинний Перелік посад з високим та підвищеним рівнем корупційних ризиків (скасував старе Рішення НАЗК № 2).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Накази НАЗК</td>
+                <td style="font-weight: 600;">Наказ НАЗК від 28.12.2021 № 830/21</td>
+                <td>Методологія управління корупційними ризиками, за якою проводиться самооцінювання ризиків державними органами.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Накази НАЗК</td>
+                <td style="font-weight: 600;">Наказ НАЗК від 20.08.2021 № 539/21</td>
+                <td>Порядок перевірки факту подання декларацій та інформування НАЗК про порушення термінів.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Методичні матеріали НАЗК</td>
+                <td style="font-weight: 600;">Методичні рекомендації НАЗК від 12.01.2024 № 2 (із змінами від 03.02.2025)</td>
+                <td>Чинні рекомендації щодо конфлікту інтересів та обмежень (прийняття подарунків, сумісництво під час воєнного стану, преміювання).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Методичні матеріали НАЗК</td>
+                <td style="font-weight: 600;">Роз'яснення НАЗК від 13.11.2023 № 4 (із змінами від 26.12.2024)</td>
+                <td>Єдині діючі роз'яснення з питань фінансового контролю, електронного декларування, декларування в умовах війни.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="instruction-section-title">5. Робота з викривачами та повідомленнями про корупцію</div>
+        <p class="text-paragraph">
+          Уповноважені особи відіграють ключову роль у впровадженні механізмів заохочення та захисту викривачів (стаття 53 Закону). Основними напрямками роботи є:
+        </p>
+        <div class="list-item">
+          <i class="fas fa-user-shield" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Забезпечення каналів зв'язку:</strong> Впровадження та підтримка захищених анонімних каналів зв'язку (пошта, гарячі лінії, веб-портали), через які громадяни та співробітники можуть повідомити про факти корупції (згідно з Вимогами, затвердженими наказом НАЗК від 02.04.2020 № 127/20).
+        </div>
+        <div class="list-item">
+          <i class="fas fa-user-shield" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Розгляд повідомлень:</strong> Повідомлення, отримані від викривачів, підлягають обов'язковій перевірці у строк до 15 днів (з можливістю продовження до 30 днів у разі необхідності).
+        </div>
+        <div class="list-item">
+          <i class="fas fa-user-shield" style="color: var(--color-accent); margin-right: 8px;"></i>
+          <strong>Гарантії захисту:</strong> Уповноважена особа здійснює моніторинг дотримання трудових прав викривачів. Викривач не може бути звільнений, підданий дисциплінарному стягненню чи іншим негативним заходам впливу з боку керівництва у зв'язку з його повідомленням.
+        </div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення вимог антикорупційного законодавства тягне за собою дисциплінарну, адміністративну чи кримінальну відповідальність відповідно до закону.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
