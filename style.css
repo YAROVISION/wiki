@@ -1042,6 +1042,59 @@ tr.highlight-flash {
   transform: translateY(-1px) scale(0.98);
 }
 
+/* Глобальні стилі друку для максимальної контрастності (чорний текст на білому тлі) */
+@media print {
+  /* Перевизначення CSS-змінних для друку */
+  :root, body, body.light-theme {
+    --bg-color: #ffffff !important;
+    --surface-color: #ffffff !important;
+    --text-primary: #000000 !important;
+    --text-secondary: #000000 !important;
+    --color-accent: #000000 !important;
+    --color-accent-hover: #000000 !important;
+    --border-color: #000000 !important;
+    --border-opacity: 1 !important;
+    --shadow-color: transparent !important;
+    --card-hover-bg: #ffffff !important;
+    --badge-bg: #ffffff !important;
+    --badge-text: #000000 !important;
+    --highlight-bg: transparent !important;
+  }
+
+  /* Форсування чорного кольору тексту та прозорого фону для всіх елементів */
+  body, main, section, div, p, span, li, a, th, td, h1, h2, h3, h4, h5, h6, strong, em, i, b, ol, ul {
+    color: #000000 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Головні контейнери мають бути білими */
+  body, html, main, .app-container, .page-content-card, .table-view-container {
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
+
+  /* Межі таблиць та важливих блоків мають бути чіткими та чорними */
+  .page-content-card, .table-view-container, .callout-box, .additional-doc-card {
+    border: 1px solid #000000 !important;
+    border-radius: 0 !important;
+  }
+
+  table.columns-table, table.columns-table th, table.columns-table td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  table.columns-table th {
+    background-color: #f0f0f0 !important; /* Легкий сірий фон для заголовків таблиць */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
 
 
 
