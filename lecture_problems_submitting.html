@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проблемні питання підготовки та подання державними службовцями щорічних е-декларацій - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .table-view-container {
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      }
+
+      table.columns-table {
+        min-width: 100% !important;
+      }
+
+      table.columns-table th, table.columns-table td {
+        border: 1px solid #cbd5e0 !important;
+        font-size: 11pt !important;
+        padding: 6px 10px !important;
+      }
+      
+      table.columns-table th {
+        background-color: #edf2f7 !important;
+        color: #111111 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МАТЕРІАЛИ НАВЧАННЯ</h1>
+        <p class="subtitle">«Проблемні питання підготовки та подання державними службовцями щорічних е-декларацій»</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <div class="new-badge">ОНОВЛЕНА ЛЕКЦІЯ №3</div>
+        <h2 class="page-title">Проблемні питання підготовки та подання державними службовцями щорічних е-декларацій</h2>
+        <p class="page-subtitle" style="font-weight: 500;">Практичний посібник для кампанії декларування 2026 року<br><span style="font-size: 0.95rem; font-weight: normal; color: var(--text-secondary);">(звітний період за 2025 рік з урахуванням оновлених методичних матеріалів НАЗК та позицій Верховного Суду)</span></p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-book"></i> Практичний посібник</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Скорочення Box -->
+        <div class="callout-box" style="margin-bottom: var(--spacing-lg); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; color: var(--color-accent);">
+            <i class="fas fa-list-ul"></i> Список прийнятих скорочень:
+          </strong>
+          <div style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+            • <strong>Закон</strong> — Закон України «Про запобігання корупції»;<br>
+            • <strong>НАЗК</strong> — Національне агентство з питань запобігання корупції;<br>
+            • <strong>Порядок № 449/21</strong> — Порядок заповнення та подання декларації особи, уповноваженої на виконання функцій держави або місцевого самоврядування, затверджений наказом НАЗК від 23.07.2021 № 449/21;<br>
+            • <strong>Порядок № 450/21</strong> — Порядок інформування НАЗК про суттєві зміни у майновому стані суб'єкта декларування, затверджений наказом НАЗК від 23.07.2021 № 450/21;<br>
+            • <strong>ПМ</strong> — прожитковий мінімум для працездатних осіб, установлений законом про Державний бюджет України на 1 січня відповідного звітного року;<br>
+            • <strong>КЕП</strong> — кваліфікований електронний підпис;<br>
+            • <strong>КУпАП</strong> — Кодекс України про адміністративні правопорушення;<br>
+            • <strong>КК України</strong> — Кримінальний кодекс України;<br>
+            • <strong>ККС ВС</strong> — Касаційний кримінальний суд у складі Верховного Суду.
+          </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="instruction-section-title">1. Види декларацій, строки подання та звітні періоди</div>
+        <p class="text-paragraph">
+          Законом та Порядком № 449/21 визначено три основні види декларацій, які мають різні строки подання та специфіку заповнення:
+        </p>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">Щорічна декларація (подається з 1 січня до 31 березня включно)</strong>
+          <p class="text-paragraph" style="margin-bottom: 8px; font-size: 0.95rem; text-align: left;">
+            Цей тип декларації охоплює попередній звітний рік (період з 1 січня до 31 грудня включно). У ході кампанії декларування 2026 року суб'єкти декларування подають інформацію за 2025 звітний рік. Декларація містить відомості станом на 31 грудня звітного року. Обов'язок подання виникає у двох випадках:
+          </p>
+          <div class="list-item" style="margin-left: var(--spacing-md);">
+            • <strong>Щорічна декларація (продовжується діяльність)</strong> — подається особами, які продовжують виконувати функції держави або місцевого самоврядування. У розділі І форми необхідно обрати відповідну позначку.
+          </div>
+          <div class="list-item" style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+            • <strong>Щорічна декларація (після звільнення)</strong> — подається особами, які припинили діяльність у звітному році. Вона подається наступного року після звільнення (до 31 березня включно).
+          </div>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">Декларація при звільненні (протягом 30 календарних днів)</strong>
+          <p class="text-paragraph" style="margin-bottom: 0; font-size: 0.95rem; text-align: left;">
+            Подається протягом 30 календарних днів з дня припинення діяльності. Вона охоплює період, який не був охоплений раніше поданими деклараціями, та містить відомості станом на останній день здійснення діяльності (останній робочий день). Відлік строку починається з наступного дня після звільнення. 
+            <br><em>Важливо:</em> якщо особа звільняється декілька разів протягом року, кожна декларація при звільненні охоплює лише новий період, не охоплений попередніми деклараціями.
+          </p>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">Декларація кандидата на посаду</strong>
+          <p class="text-paragraph" style="margin-bottom: 0; font-size: 0.95rem; text-align: left;">
+            Подається до призначення або обрання на посаду за минулий рік. Вона охоплює період з 1 січня до 31 грудня включно, що передує року, в якому особа претендує на посаду. Якщо особа вже подала щорічну декларацію за цей же рік, декларація кандидата не подається. Проте, якщо особа подала декларацію кандидата за попередній рік, а згодом у тому ж році була призначена на посаду до 31 березня, у неї виникає обов'язок подати також і щорічну декларацію за цей звітний період.
+          </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="instruction-section-title">2. Законодавчі зміни, нормативно-правові параметри та фінансові пороги у 2026 році</div>
+        <p class="text-paragraph">
+          Усі грошові пороги та ліміти декларування прив'язані до розміру прожиткового мінімуму (ПМ) для працездатних осіб, встановленого законом на 1 січня звітного року. Для кампанії декларування 2026 року (звітний період — 2025 рік) базовий розмір ПМ становить 3 328 грн.
+        </p>
+
+        <!-- Table 1 -->
+        <div class="table-view-container" style="margin: var(--spacing-sm) 0 var(--spacing-lg) 0;">
+          <table class="columns-table">
+            <thead>
+              <tr>
+                <th style="width: 45%;">Показник / Об'єкт декларування</th>
+                <th style="width: 25%;">Законодавчий поріг</th>
+                <th style="width: 30%;">Розрахунок у гривнях (кампанія 2026 р.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Поріг суттєвих помилок (межа між неточністю та недостовірністю)</td>
+                <td>100 ПМ</td>
+                <td>332 800 грн</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Початок кримінальної відповідальності (ст. 366-2 КК України)</td>
+                <td>500 ПМ</td>
+                <td>1 664 000 грн</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Обов'язкове декларування цінного рухомого майна (Розділ 5)</td>
+                <td>Більше 100 ПМ</td>
+                <td>332 800 грн</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Декларування грошових активів (налічка + рахунки сукупно)</td>
+                <td>Понад 50 ПМ</td>
+                <td>166 400 грн</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Повідомлення про суттєві зміни в майновому стані (ст. 52)</td>
+                <td>50 ПМ</td>
+                <td>166 400 грн</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-paragraph" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: -10px; margin-bottom: var(--spacing-md); text-align: center;">
+          <em>Таблиця 1: Ключові фінансові пороги для електронного декларування у 2026 році</em>
+        </p>
+
+        <!-- Section 3 -->
+        <div class="instruction-section-title">3. Спрощений порядок та право на помилку: Оновлене правило 30 днів</div>
+        <p class="text-paragraph">
+          Однією з найважливіших новел законодавства (ч. 4 ст. 45 Закону) є суттєве продовження строку, протягом якого декларант має право самостійно виправити виявлені неточності без негативних наслідків. Наразі цей строк становить 30 календарних днів після дати подання декларації (у попередніх редакціях строк обмежувався лише 7 днями). Для подання виправленої форми не потрібно звертатися до НАЗК — кнопка «Подати виправлену декларацію» є активною в особистому кабінеті декларанта автоматично.
+        </p>
+        <p class="text-paragraph">
+          Якщо 30-денний строк виправлення вже минув, декларант може надіслати офіційне повідомлення через персональний електронний кабінет у вкладці «Мої повідомлення». У повідомленні слід деталізовано описати виявлені неточності та надати документи, що підтверджують достовірні дані. Такі відомості враховуються НАЗК під час проведення повної перевірки та є підтвердженням відсутності прямого умислу на приховування майна.
+        </p>
+
+        <!-- Section 4 -->
+        <div class="instruction-section-title">4. Особливості декларування для осіб, що звільняються у період щорічної кампанії</div>
+        <p class="text-paragraph">
+          Звільнення посадової особи в період з 1 січня до 31 березня викликає потребу в одночасному або послідовному поданні декількох форм е-декларацій. У зв'язку з цим НАЗК рекомендує діяти за таким алгоритмом:
+        </p>
+        <div class="list-item">
+          <strong>1. Спочатку подати щорічну декларацію</strong> (продовжується діяльність) за попередній звітний рік — це необхідно зробити до закінчення кампанії або до закінчення 30 днів з моменту звільнення, залежно від того, яка подія настає раніше.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>2. Лише після цього подати декларацію при звільненні</strong> за період від 1 січня поточного року до дати звільнення включно. Цей крок дозволяє уникнути змішування звітних періодів та коректно застосувати ПМ поточного року.
+        </div>
+
+        <div class="callout-box" style="margin-top: var(--spacing-md); border-left: 4px solid var(--color-success);">
+          <strong>Приклад практичного розрахунку:</strong><br>
+          Посадовець звільняється 22 березня 2026 року. Остання робоча дата — 22.03.2026. Кінцевий термін подання декларації при звільненні становить 21 квітня 2026 року (30 днів з дня припинення діяльності). Декларанту слід подати:<br>
+          • <strong>Щорічну декларацію за 2025 рік</strong> — у строк до 31 березня 2026 року;<br>
+          • <strong>Декларацію при звільненні за період з 01.01.2026 по 22.03.2026</strong> — у строк до 21 квітня 2026 року.
+        </div>
+
+        <!-- Section 5 -->
+        <div class="instruction-section-title">5. Станом на яку дату зазначаються відомості в декларації</div>
+        <p class="text-paragraph">
+          За загальним правилом, інформація в декларації зазначається станом на останній день звітного періоду (тобто на 31 грудня звітного року). Это стосується ідентифікаційних даних, місця роботи, посади та категорій ризиковості. Проте існують три ключові винятки:
+        </p>
+        <div class="list-item">
+          <strong>Виняток 1 (Декларація кандидата на посаду):</strong> Зазначається назва майбутнього (бажаного) місця роботи та посади, на яку претендує особа, а не фактичне місце роботи станом на 31 грудня звітного року.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>Виняток 2 (Призначення на початку року):</strong> Якщо особа призначена на посаду у період з 1 січня до 31 березня та подає свою першу щорічну декларацію, вона вказує тип посади, яку обіймає на момент подання декларації, а не станом на кінець звітного періоду.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>Виняток 3 (Декларація після звільнення):</strong> При подачі декларації після звільнення особа повинна зазначити місце роботи, посаду та статус, які вона мала на момент звільнення, а не на кінець звітного періоду чи дату подання.
+        </div>
+
+        <!-- Section 6 -->
+        <div class="instruction-section-title">6. Практичний аналіз типових помилок декларантів та способи їх уникнення</div>
+        
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          Декларування криптовалют та віртуальних активів:
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Криптовалюта є об'єктом декларування відповідно до оновленого законодавства та зазначається в Розділі 10 «Нематеріальні активи» (або як цінні папери/корпоративні права у разі іншої правової природи активів). Поширена помилка, що «крипту можна не вказувати, оскільки вона анонімна», веде до кримінальної чи адміністративної відповідальності. Криптоактиви слід декларувати за ринковою вартістю в гривневому еквіваленті станом на 31 грудня звітного року.
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          Неотримання або приховування дрібних доходів (Кешбеки, бонуси, соціальні виплати):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Декларанти зобов'язані вносити до Розділу 11 «Доходи» абсолютно всі отримані доходи, незалежно від їх розміру та джерела. Це стосується відсотків по депозитах, страхових виплат, банківських кешбеків, бонусів, а також виплат у межах державних програм підтримки (наприклад, «Національний кешбек» та ін.). Законодавство виключає необхідність декларування валютообмінних операцій (купівля/продаж іноземної валюти за власні кошти), які не вважаються видатками або значними змінами майнового стану.
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          Визначення членів сім'ї: Правило 183 днів:
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Членами сім'ї декларанта (крім подружжя та неповнолітніх дітей) є особи, які спільно проживають, пов'язані спільним побутом, мають взаємні права та обов'язки (наприклад, цивільний партнер, батьки, повнолітні діти). У 2026 році діє жорстке законодавче правило: особа визнається членом сім'ї для цілей декларування, якщо вона спільно проживала з декларантом станом на останній день звітного року АБО сукупно не менше 183 днів протягом року. Усі активи та рахунки таких осіб підлягають обов'язковому відображенню в декларації.
+        </p>
+
+        <!-- Section 7 -->
+        <div class="instruction-section-title">7. Юридична відповідальність та актуальна судова практика Верховного Суду</div>
+        <p class="text-paragraph">
+          Несвоєчасне подання декларації без поважних причин тягне за собою адміністративну відповідальність за ч. 1 ст. 172-6 КУпАП. Головний правовий ризик полягає не в сумі накладеного штрафу, а в обов'язковому внесенні особи до Єдиного державного реєстру корупціонерів. Це автоматично припиняє подальшу кар'єру на державній службі.
+        </p>
+        
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          Ключові позиції Касаційного кримінального суду Верховного Суду:
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          У постанові ККС ВС від 12 березня 2024 року у справі № 676/4489/22 сформульовано правові висновки, які мають прецедентне значення для кампанії декларування 2026 року та спростовують найпоширеніші виправдання порушників:
+        </p>
+        <div class="list-item">
+          <strong>1. Сплата податків не звільняє від фінансового контролю:</strong> Той факт, що декларант сумлінно сплатив усі податки з отриманого доходу (наприклад, від надання майна в оренду), не звільняє його від обов'язку відобразити цей дохід у е-декларації. Фінансовий антикорупційний контроль має іншу правову природу, ніж оподаткування.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>2. Недостатність комп'ютерної грамотності не є виправданням:</strong> Суд відхилив аргумент захисту про те, що декларант припустився помилок через відсутність практичних навичок роботи на комп'ютері. Накладаючи на декларацію свій КЕП, суб'єкт декларування офіційно підтверджує ознайомлення з правилами заповнення форми та несе повну відповідальність за достовірність внесеної інформації. Вибіркове або неточне декларування не може вважатися технічною помилкою чи опискою.
+        </div>
+
+        <!-- Section 8 -->
+        <div class="instruction-section-title">8. Практичний чек-лист для державного службовця перед поданням декларації</div>
+        <p class="text-paragraph">
+          Для уникнення помилок та захисту від кримінальних або адміністративних проваджень, НАЗК рекомендує кожному декларанту виконати такі обов'язкові дії:
+        </p>
+        <div class="list-item">
+          • Сформувати довідку «Дані для декларації» в особистому кабінеті до початку заповнення, щоб перевірити відомості державних реєстрів.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          • Запросити банківські виписки щодо всіх відкритих рахунків (включаючи кредитні картки, рахунки «Національного кешбеку», закриті протягом року рахунки) станом на 31 грудня звітного року.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          • Уточнити у членів сім'ї інформацію про наявність у них криптовалют, банківських депозитів, отриманих подарунків та грошових переказів.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          • Перевірити, чи сукупно з цивільним партнером або близькими родичами ви проживали спільно більше 183 днів на рік для правильного визначення кола членів сім'ї.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          • Уникати будь-яких заокруглень сум або вартості майна; вказувати грошові суми копійка в копійку відповідно до офіційних документів.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          • Перечитати заповнену чернетку декларації декілька разів перед підписанням. Пам'ятайте, що у вас є рівно 30 календарних днів для самостійного подання виправленої декларації.
+        </div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення антикорупційного законодавства тягне за собою кримінальну, адміністративну, дисциплінарну та/або цивільно-правову відповідальність згідно з законодавством України.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
