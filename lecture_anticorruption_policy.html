@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Загальні засади антикорупційної політики в Україні - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МАТЕРІАЛИ НАВЧАННЯ</h1>
+        <p class="subtitle">Матеріали навчання: “Загальні засади антикорупційної політики в Україні”</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title">Матеріали навчання: “Загальні засади антикорупційної політики в Україні”</h2>
+        <p class="page-subtitle" style="font-weight: 500;">Антикорупційна стратегія та Державна антикорупційна програма (ДАП): принципи, координація та участь громадськості</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-sitemap"></i> Засади антикорупційної політики</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Вступ -->
+        <p class="text-paragraph">
+          Антикорупційна стратегія — це базовий документ, який допомагає забезпечити командну роботу всіх органів влади для подолання корупції. Розробка і координація впровадження Антикорупційної стратегії є відповідальністю Національного агентства з питань запобігання корупції (НАЗК), закріпленою за ним на законодавчому рівні.
+        </p>
+        <p class="text-paragraph">
+          Щороку НАЗК оцінює виконання Антикорупційної стратегії, готуючи Національну доповідь щодо реалізації засад антикорупційної політики. Також завдяки цьому щороку до державної програми з виконання Стратегії можуть вноситися зміни, аби цей документ не втрачав актуальності.
+        </p>
+
+        <!-- Важливий контекст Box -->
+        <div class="callout-box" style="margin-bottom: var(--spacing-lg); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; color: var(--color-accent);">
+            <i class="fas fa-info-circle"></i> Важливий контекст сьогодення:
+          </strong>
+          <p class="text-paragraph" style="margin-bottom: 0; font-size: 0.9rem;">
+            Остання велика Антикорупційна стратегія ухвалювалася Законом України на період 2021–2025 років, а реалізується вона через Державну антикорупційну програму (ДАП) на 2023–2025 роки. З огляду на Постанову Кабінету Міністрів України від 31 грудня 2025 р. № 1786 «Про продовження строку виконання Державної антикорупційної програми на 2023-2025 роки», строк виконання цієї програми було продовжено. Таким чином, держава продовжує її активну реалізацію, забезпечуючи безперервність антикорупційних заходів, паралельно готуючись до формування наступного стратегічного циклу.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="instruction-section-title">Принципи розробки Стратегії</div>
+        <p class="text-paragraph">
+          В основу розробки Стратегії покладені 5 основних принципів:
+        </p>
+        <div class="list-item">
+          • <strong>Оптимізація функцій держави та місцевого самоврядування:</strong> позбавлення органів влади надмірних повноважень та усунення дублювання їх функцій.
+        </div>
+        <div class="list-item">
+          • <strong>Зниження “людського фактору” та збільшення прозорості:</strong> підвищення ефективності у стосунках держави з громадянами та організаціями завдяки цифровізації більшості процесів та послуг.
+        </div>
+        <div class="list-item">
+          • <strong>Створення зручних та законних альтернатив</strong> корупційним практикам.
+        </div>
+        <div class="list-item">
+          • <strong>Забезпечення дієвого державного контролю</strong> за дотриманням публічними службовцями правил етичної поведінки та вимог антикорупційного законодавства.
+        </div>
+        <div class="list-item">
+          • <strong>Забезпечення невідворотності відповідальності</strong> за корупційні та пов’язані з корупцією правопорушення.
+        </div>
+
+        <!-- Section 2 -->
+        <div class="instruction-section-title">Навіщо потрібна координація?</div>
+        <p class="text-paragraph">
+          Ефективні запобігання та протидія корупції неможливі без злагодженої роботи всіх державних органів. Без Антикорупційної стратегії державні органи діють хаотично: запроваджені ними заходи із запобігання корупції можуть бути малоефективними, оскільки відбуваються лише на одній невеликій ділянці.
+        </p>
+        <p class="text-paragraph">
+          Антикорупційна стратегія об’єднує органи влади у єдину команду та допомагає їм взаємодіяти для досягнення кращих результатів. Про скоординованість як необхідну умову ефективної боротьби з корупцією говорить Конвенція ООН проти корупції, яку підписала Україна. Створення антикорупційної стратегії – найбільш розповсюджений інструмент для забезпечення такої координації, який успішно працює у Великій Британії, Сінгапурі, Румунії тощо.
+        </p>
+
+        <!-- Section 3 -->
+        <div class="instruction-section-title">Пріоритетні сектори державного управління</div>
+        <p class="text-paragraph">
+          Антикорупційна стратегія охоплює питання функціонування загальної системи запобігання корупції, визначає пріоритети у конкретних секторах та приділяє велику увагу питанню відповідальності. Пріоритетні сектори, визначені стратегією:
+        </p>
+        <div class="list-item">• Суд, прокуратура, поліція.</div>
+        <div class="list-item">• Державне регулювання економіки.</div>
+        <div class="list-item">• Державний та приватний сектори економіки.</div>
+        <div class="list-item">• Податки та митниця.</div>
+        <div class="list-item">• Будівництво, земля, інфраструктура.</div>
+        <div class="list-item">• Сектор оборони.</div>
+        <div class="list-item">• Охорона здоров’я та соціальний захист.</div>
+        <div class="list-item">• Система запобігання та протидії корупції.</div>
+        <div class="list-item">• <strong>Відбудова України, прозорість використання міжнародної допомоги</strong> та гуманітарних фондів (критично важливий фокус після початку повномасштабного вторгнення).</div>
+
+        <!-- Section 4 -->
+        <div class="instruction-section-title">Формування та реалізація антикорупційної політики в Україні</div>
+        <div class="list-item">
+          • <strong>Засади антикорупційної політики (Антикорупційна стратегія)</strong> визначаються шляхом прийняття відповідного Закону Верховною Радою України.
+        </div>
+        <div class="list-item">
+          • <strong>Верховна Рада України</strong> щороку не пізніше 1 червня проводить парламентські слухання з питань ситуації щодо корупції, затверджує та оприлюднює щорічну національну доповідь.
+        </div>
+        <div class="list-item">
+          • <strong>Антикорупційна стратегія розробляється НАЗК</strong> на основі аналізу ситуації щодо корупції та результатів виконання попередньої стратегії.
+        </div>
+        <div class="list-item">
+          • <strong>Антикорупційна стратегія реалізується шляхом виконання</strong> державної антикорупційної програми (ДАП), яка розробляється НАЗК та затверджується Кабінетом Міністрів України.
+        </div>
+        <div class="list-item">
+          • <strong>Керівники державних органів</strong> несуть персональну відповідальність за забезпечення реалізації заходів програми.
+        </div>
+        <div class="list-item">
+          • <strong>Державна програма підлягає щорічному перегляду</strong> з урахуванням результатів реалізації визначених заходів та рекомендацій парламентських слухань.
+        </div>
+
+        <!-- Section 5 -->
+        <div class="instruction-section-title">Антикорупційні програми (ст. 19 Закону України "Про запобігання корупції")</div>
+        <p class="text-paragraph">
+          Державні органи та інші визначені законом структури зобов'язані приймати власні антикорупційні програми. Антикорупційні програми приймаються в:
+        </p>
+        <div class="list-item">• <strong>Офісі Президента України</strong> (шляхом затвердження керівником).</div>
+        <div class="list-item">• <strong>Апараті Верховної Ради України</strong>, Секретаріаті КМУ, Секретаріаті Уповноваженого ВРУ з прав людини.</div>
+        <div class="list-item">• <strong>Офісі Генерального прокурора</strong>, Службі безпеки України.</div>
+        <div class="list-item">• <strong>Міністерствах та інших органах виконавчої влади</strong> (де ключову роль у їх розробці та впровадженні відіграють уповноважені підрозділи або особи з питань запобігання та виявлення корупції).</div>
+        <div class="list-item">• <strong>Апараті РНБО</strong> (затверджується Секретарем РНБО).</div>
+        <div class="list-item">• <strong>Національному банку України</strong> (затверджується Правлінням).</div>
+        <div class="list-item">• <strong>Рахунковій палаті</strong>, Центральній виборчій комісії, Вищій раді правосуддя, обласних радах, Київській та Севастопольській міських радах тощо (шляхом затвердження їх рішеннями).</div>
+        
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);">
+          Антикорупційні програми підлягають погодженню Національним агентством (НАЗК). Вони повинні передбачати:
+        </p>
+        <div class="list-item">• Визначення засад відомчої політики щодо запобігання та протидії корупції у відповідній сфері.</div>
+        <div class="list-item">• Оцінку корупційних ризиків у діяльності органу, причини, що їх породжують, та умови, що їм сприяють.</div>
+        <div class="list-item">• Заходи щодо усунення виявлених ризиків, осіб, відповідальних за їх виконання, строки та ресурси.</div>
+        <div class="list-item">• Навчання та заходи з поширення інформації щодо програм антикорупційного спрямування.</div>
+        <div class="list-item">• Процедури моніторингу, оцінки виконання та періодичного перегляду програм.</div>
+        
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);">
+          Спеціально уповноважені суб’єкти до 15 лютого подають до НАЗК інформацію, необхідну для підготовки національної доповіді. КМУ щороку не пізніше 15 квітня розглядає та схвалює проект доповіді, який направляється до Верховної Ради.
+        </p>
+
+        <!-- Section 6 -->
+        <div class="instruction-section-title">Участь громадськості в заходах щодо запобігання корупції (ст. 21)</div>
+        <p class="text-paragraph">
+          Права громадськості залишаються незмінними та є основою відкритого суспільства. Громадські об’єднання та окремі громадяни мають право:
+        </p>
+        <div class="list-item">
+          • <strong>Повідомляти про виявлені факти</strong> вчинення корупційних правопорушень, реальний чи потенційний конфлікт інтересів спеціально уповноваженим суб’єктам, НАЗК, керівництву органів, а також громадськості.
+        </div>
+        <div class="list-item">
+          • <strong>Запитувати та одержувати</strong> від державних органів інформацію про діяльність щодо запобігання корупції.
+        </div>
+        <div class="list-item">
+          • <strong>Проводити, замовляти проведення громадської антикорупційної експертизи</strong> нормативно-правових актів та подавати пропозиції.
+        </div>
+        <div class="list-item">• Брати участь у парламентських слуханнях та інших заходах.</div>
+        <div class="list-item">• Вносити пропозиції щодо вдосконалення законодавчого регулювання.</div>
+        <div class="list-item">• Проводити соціологічні та наукові дослідження, а також заходи щодо інформування населення.</div>
+        <div class="list-item">• Здійснювати громадський контроль за виконанням законів у сфері запобігання корупції.</div>
+        <div class="list-item">• Здійснювати інші не заборонені законом заходи.</div>
+        
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);">
+          Державні органи зобов'язані узагальнювати результати громадського обговорення законопроєктів та оприлюднювати їх на своїх офіційних веб-сайтах.
+        </p>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення антикорупційного законодавства тягне за собою кримінальну, адміністративну, дисциплінарну та/або цивільно-правову відповідальність згідно з законодавством України.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
