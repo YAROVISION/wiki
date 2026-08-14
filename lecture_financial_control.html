@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Питання практичного застосування положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+    
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container,
+      .page-title,
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 13pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .instruction-section-title {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 8px 12px !important;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        border-left: 5px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .table-view-container {
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      }
+
+      table.columns-table {
+        min-width: 100% !important;
+      }
+
+      table.columns-table th, table.columns-table td {
+        border: 1px solid #cbd5e0 !important;
+        font-size: 11pt !important;
+        padding: 6px 10px !important;
+      }
+      
+      table.columns-table th {
+        background-color: #edf2f7 !important;
+        color: #111111 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МАТЕРІАЛИ НАВЧАННЯ</h1>
+        <p class="subtitle">«Питання практичного застосування положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю»</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <h2 class="page-title">Питання практичного застосування положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю</h2>
+        <p class="page-subtitle" style="font-weight: 500;">(Нова розширена навчально-методична лекція — актуалізовано станом на 2026 рік)</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-file-invoice-dollar"></i> Фінансовий контроль</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Updates Info Box -->
+        <div class="callout-box" style="margin-bottom: var(--spacing-lg); border-left: 4px solid var(--color-accent); background-color: rgba(139, 94, 60, 0.03);">
+          <strong style="display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; color: var(--color-accent);">
+            <i class="fas fa-sync-alt"></i> ДОВІДКА ПРО ОНОВЛЕННЯ (2026 р.):
+          </strong>
+          <p class="text-paragraph" style="margin-bottom: 8px; font-size: 0.9rem;">
+            Навчально-методичну лекцію оновлено та актуалізовано станом на 2026 рік з урахуванням останніх нормативно-правових актів НАЗК та змін антикорупційного законодавства.
+          </p>
+        </div>
+
+        <!-- Section 0: Вступ -->
+        <div class="instruction-section-title">Вступ: Фінансовий контроль як інструмент прозорості та доброчесності</div>
+        <p class="text-paragraph">
+          Заходи фінансового контролю є одним із найбільш дієвих та стратегічно важливих механізмів запобігання і виявлення корупції у публічній сфері. Головна мета е-декларування, моніторингу способу життя та інших інструментів фінансового контролю — створення прозорого середовища, у якому корупційна поведінка стає невигідною, ризикованою та суспільно неприйнятною. Декларування майна, доходів та видатків публічних службовців забезпечує підзвітність влади перед громадянським суспільством, допомагає виявляти випадки незаконного збагачення та врегульовувати конфлікти інтересів. З урахуванням найкращих світових практик, в Україні створено унікальну цифрову екосистему фінансового контролю, центральним елементом якої є Національне агентство з питань запобігання корупції (НАЗК).
+        </p>
+
+        <!-- Section 1 -->
+        <div class="instruction-section-title">Розділ I. Нормативно-правова основа фінансового контролю</div>
+        <p class="text-paragraph">
+          Функціонування системи фінансового контролю базується на положеннях Закону України «Про запобігання корупції» (далі — Закон) та низці підзаконних нормативно-правових актів НАЗК:
+        </p>
+        <div class="list-item">
+          <strong>1. Закон України «Про запобігання корупції» від 14.10.2014 № 1700-VII</strong> (зокрема Розділ VII «Фінансовий контроль»).
+        </div>
+        <div class="list-item">
+          <strong>2. Наказ НАЗК від 08.11.2023 № 252/23</strong> «Про затвердження форми декларації особи, уповноваженої на виконання функцій держави або місцевого самоврядування, та Порядку заповнення та подання декларації...».
+        </div>
+        <div class="list-item">
+          <strong>3. Наказ НАЗК від 23.07.2021 № 448/21</strong> «Про функціонування Єдиного державного реєстру декларацій...».
+        </div>
+        <div class="list-item">
+          <strong>4. Наказ НАЗК від 23.07.2021 № 450/21</strong> «Про затвердження Порядку інформування НАЗК про суттєві зміни у майновому стані суб'єкта декларування».
+        </div>
+        <div class="list-item">
+          <strong>5. Наказ НАЗК від 23.07.2021 № 451/21</strong> «Про затвердження Порядку інформування НАЗК про відкриття валютного рахунка в установі банку-нерезидента».
+        </div>
+        <div class="list-item">
+          <strong>6. Наказ НАЗК від 20.08.2021 № 539/21</strong> «Про затвердження Порядки перевірки факту подання суб'єктами декларування декларацій...».
+        </div>
+        <div class="list-item">
+          <strong>7. Наказ НАЗК від 16.10.2023 № 236/23</strong> «Про затвердження Порядку здійснення моніторингу способу життя суб'єктів декларування».
+        </div>
+        <div class="list-item">
+          <strong>8. Наказ НАЗК від 25.06.2026 № 177/26</strong> «Про внесення змін до Порядку проведення перевірок організації роботи із запобігання і виявлення корупції» (найновіші правила контролю за виконанням приписів).
+        </div>
+
+        <!-- Section 2 -->
+        <div class="instruction-section-title">Розділ II. Види декларацій та терміни їх подання</div>
+        <p class="text-paragraph">
+          Подання декларацій здійснюється виключно в електронній формі через особистий кабінет у <strong>Єдиному державному реєстрі декларацій (ЄДР)</strong>. Закон визначає такі типи декларацій та чіткі строки їх подання:
+        </p>
+        
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">1. Щорічна декларація (тип «щорічна»)</strong>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Коло осіб:</strong> Суб'єкти, визначені у п. 1, підпунктах «а» і «в» п. 2 ч. 1 ст. 3 Закону (особи, уповноважені на виконання функцій держави або місцевого самоврядування).</span>
+          <span>• <strong>Термін:</strong> Подається щорічно <strong>з 1 січня до 1 квітня</strong> за попередній звітний рік.</span>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">2. Декларація «при звільненні»</strong>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Коло осіб:</strong> Суб'єкти декларування, які припиняють діяльність, пов’язану з виконанням функцій держави або місцевого самоврядування.</span>
+          <span>• <strong>Термін:</strong> Подається <strong>не пізніше 30 календарних днів</strong> з дня припинення така діяльність (охоплює період, який не був охоплений раніше поданими деклараціями).</span>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">3. Декларація «після звільнення»</strong>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Коло осіб:</strong> Особи, які припинили діяльність, пов’язану з виконанням функцій держави або місцевого самоврядування.</span>
+          <span>• <strong>Термін:</strong> Подається наступного року після звільнення в період <strong>з 1 січня до 1 квітня</strong> за минулий звітний рік.</span>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">4. Декларація кандидата на посаду</strong>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Коло осіб:</strong> Особи, які претендують на зайняття публічних посад.</span>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Термін:</strong> Подається <strong>до призначення або обрання</strong> на відповідну посаду за минулий рік.</span>
+          <span>• <strong>Важливе правило одноразового подання:</strong> Якщо особа вже подала щорічну декларацію за минулий рік, декларація кандидата на посаду за цей самий період не подається. Повторне подання е-декларації за один і той самий звітний період не вимагається згідно з ч. 5 ст. 25 Закону України «Про державну службу».</span>
+        </div>
+
+        <div class="callout-box" style="margin-bottom: var(--spacing-md);">
+          <strong style="color: var(--color-accent); display: block; margin-bottom: 4px;">5. Декларація при входженні до складу комісій</strong>
+          <span style="display: block; margin-bottom: 4px;">• <strong>Коло осіб:</strong> Члени конкурсних або дисциплінарних комісій, утворених відповідно до Закону України «Про державну службу».</span>
+          <span>• <strong>Термін:</strong> Подається за минулий рік протягом <strong>10 календарних днів</strong> після входження (включення, залучення, обрання, призначення) до складу відповідної комісії.</span>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="instruction-section-title">Розділ III. Повідомлення про суттєві зміни в майновому стані (ПСЗ)</div>
+        <p class="text-paragraph">
+          Повідомлення про суттєві зміни у майновому стані (ПСЗ) є додатковим інструментом оперативного фінансового контролю. Воно покликане забезпечити прозорість динаміки активів посадовця протягом року, не чекаючи наступної щорічної кампанії.
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          1. Суб'єкти подання ПСЗ (Обмежене коло осіб):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          На відміну від загального обов'язку декларування, обов’язок подавати ПСЗ поширюється <strong>виключно</strong> на:
+        </p>
+        <div class="list-item">
+          Службових осіб, які займають відповідальне та особливо відповідальне становище (згідно з приміткою до ст. 51-3 Закону).
+        </div>
+        <div class="list-item">
+          Декларантів, які займають посади, пов'язані з високим та підвищеним рівнем корупційних ризиків.
+        </div>
+        <p class="text-paragraph" style="margin-top: var(--spacing-xs); font-style: italic;">
+          * Усі інші категорії декларантів ПСЗ не подають! Після звільнення з посади, яка передбачає ПСЗ, цей обов'язок припиняється (крім випадків, коли подія відбулася в останній день роботи).
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          2. Поріг та підстави для подання ПСЗ у 2026 році:
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Обов'язок виникає, якщо сума отриманого одноразового доходу, придбаного майна або здійсненого видатку перевищує <strong>50 прожиткових мінімумів (ПМ)</strong> для працездатних осіб станом на 1 січня відповідного року.
+        </p>
+        <div class="callout-box" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--color-success);">
+          • <strong>Прожитковий мінімум на 01.01.2026</strong> становить 3 328 грн.<br>
+          • <strong>Поріг для подання ПСЗ у 2026 році</strong> становить <strong>166 400 грн</strong> (50 * 3 328 грн).
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          Типові випадки подання ПСЗ:
+        </p>
+        <div class="list-item">
+          Отримання одноразового доходу (заробітна плата, премія, дохід від продажу авто/нерухомості, погашення ОВДП тощо) на суму понад 166,4 тис. грн.
+        </div>
+        <div class="list-item">
+          Придбання майна (автомобіль, нерухомість, земельна ділянка) вартістю понад 166,4 тис. грн.
+        </div>
+        <div class="list-item">
+          Здійснення одноразового видатку (оплата навчання, подорожі, погашення кредиту тощо) на суму понад 166,4 тис. грн.
+        </div>
+        <div class="list-item">
+          Отримання подарунка чи спадщини, якщо їх вартість оцінена у суму понад 166,4 тис. грн.
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs);">
+          3. Ключові процедурні правила ПСЗ:
+        </p>
+        <div class="list-item">
+          <strong>Термін подання:</strong> Протягом <strong>10 календарних днів</strong> з моменту отримання доходу, придбання майна чи здійснення видатку.
+        </div>
+        <div class="list-item">
+          <strong>Неможливість виправлення:</strong> Законодавством не передбачено процедури подання виправленого (уточненого) ПСЗ. Будьте уважні при заповненні!
+        </div>
+        <div class="list-item">
+          <strong>Разовість транзакції:</strong> ПСЗ подається за фактом конкретної разової операції, а не сукупного накопичення за місяць чи квартал.
+        </div>
+        <div class="list-item">
+          <strong>Податки та збори:</strong> Розрахунок здійснюється виходячи з нарахованої (брутто) суми доходу, а не фактично виплаченої «на руки» (нетто) після вирахування податків.
+        </div>
+        <div class="list-item">
+          <strong>Члени сім'ї:</strong> Зміни в майновому стані членів сім'ї суб'єкта декларування <strong>не підлягають</strong> відображенню в ПСЗ. Ці відомості вносяться вже безпосередньо до щорічної декларації.
+        </div>
+        <div class="list-item">
+          <strong>Відсутність оцінки:</strong> Якщо майно (наприклад, спадщина, дарунок) не проходило грошову оцінку і його вартість невідома, ПСЗ не подається. Таке майно декларується вже за підсумками року в черговій декларації.
+        </div>
+        <div class="list-item">
+          <strong>Військовослужбовці:</strong> Посадовці, які мають право на відтермінування подання декларацій на період дії воєнного стану, повністю звільняються і від обов'язку подання ПСЗ.
+        </div>
+
+        <!-- Section 4 -->
+        <div class="instruction-section-title">Розділ IV. Відповідальність за порушення вимог фінансового контролю</div>
+        <p class="text-paragraph">
+          Законодавство передбачає жорстку систему відповідальності за несвоєчасне подання декларацій або декларування завідомо недостовірних відомостей. Завдяки Закону щодо підвищення відповідальності посадовців за корупційні правопорушення (діє з <strong>17.07.2025</strong>), межі відповідальності були суттєво змінені.
+        </p>
+        <p class="text-paragraph">
+          Усі пороги відповідальності розраховуються на основі прожиткового мінімуму для працездатних осіб станом на 1 січня звітного року. Для декларацій за 2025/2026 роки цей показник становить <strong>3 328 грн</strong>.
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          1. Адміністративна відповідальність (Стаття 172-6 КУпАП):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Порушення вимог фінансового контролю відносять до адміністративних правопорушень, пов’язаних із корупцією.
+        </p>
+        <div class="list-item">
+          <strong>Несвоєчасне подання декларації без поважних причин (ч. 1 ст. 172-6 КУпАП):</strong>
+          <br>• Карається штрафом від 50 до 100 неоподатковуваних мінімумів доходів громадян.
+          <br>• Навіть мінімальний штраф тягне за собою обов’язкове внесення особи до <strong>Реєстру порушників</strong>, що фактично закриває шлях до подальшої кар'єри на державній службі.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>Декларування недостовірних відомостей (ч. 4 ст. 172-6 КУпАП):</strong>
+          <br>• Застосовується, якщо недостовірні відомості відрізняються від реальних на суму <strong>від 150 до 750 ПМ</strong>.
+          <br>• <strong>У 2026 році адміністративна відповідальність настає за розбіжності від 499 200 грн до 2 496 000 грн</strong> (раніше поріг складав 100–500 ПМ).
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs);">
+          2. Кримінальна відповідальність (Стаття 366-2 ККУ):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Настає у випадках умисного внесення суб'єктом декларування завідомо недостовірних відомостей або умисного неподання декларації.
+        </p>
+        <div class="list-item">
+          <strong>Стаття 366-2 частина 1:</strong>
+          <br>• Застосовується, якщо розбіжність між задекларованим майном та реальними фактами становить <strong>від 750 до 2,5 тис. ПМ</strong>.
+          <br>• <strong>У 2026 році це сума від 2 496 000 грн до 8 320 000 грн</strong> (раніше поріг складав 500–2000 ПМ).
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>Стаття 366-2 частина 2:</strong>
+          <br>• Застосовується при розбіжності <strong>понад 2,5 тис. ПМ</strong>.
+          <br>• <strong>У 2026 році кримінальна відповідальність за ч. 2 настає за розбіжності понад 8 320 000 грн</strong>. Санкція передбачає суворіші заходи покарання, аж до обмеження чи позбавлення волі.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>Умисне неподання декларації (Стаття 366-3 ККУ):</strong>
+          <br>• Настає за умисне неподання декларації суб'єктом декларування та карається штрафом, громадськими роботами або позбавленням волі з позбавленням права обіймати певні посади.
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs);">
+          3. Цивільно-правова відповідальність: Цивільна конфіскація (Стаття 290 ЦПК):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Новим законом підвищено поріг для пред'явлення позову про визнання активів необґрунтованими та їх стягнення в дохід держави (цивільна конфіскація).
+        </p>
+        <div class="list-item">
+          • Поріг підвищено з 500 до <strong>750 ПМ</strong>.
+        </div>
+        <div class="list-item">
+          • Оскільки згідно з ч. 2 ст. 290 ЦПК розмір ПМ за цією статтею зафіксовано на рівні дати набрання чинності базового закону про конфіскацію (28 листопада 2019 року), 1 ПМ дорівнює <strong>2 007 грн</strong>.
+        </div>
+        <div class="list-item">
+          • <strong>Позов про цивільну конфіскацію у 2026 році подається, якщо різниця між активами та законними доходами дорівнює або перевищує 1 505 250 грн</strong> (раніше цей поріг становив 1 003 500 грн).
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs);">
+          4. Терміни перебування відомостей у Реєстрі порушників:
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Закон чітко розмежував та встановив строки зберігання відомостей про осіб, які вчинили корупційні або пов'язані з корупцією правопорушення, у Єдиному державному реєстрі:
+        </p>
+        <div class="list-item">
+          <strong>1 рік</strong> — для відомостей про притягнення фізичної особи до цивільно-правової або адміністративної відповідальності (зокрема за несвоєчасне подання декларації). Після закінчення 1 року відомості автоматично підлягають виключенню.
+        </div>
+        <div class="list-item">
+          <strong>До погашення або зняття судимості</strong> — для відомостей про притягнення до кримінальної відповідальності (наприклад, за ст. 366-2 чи 366-3 ККУ).
+        </div>
+        <div class="list-item">
+          <strong>5 років</strong> — для відомостей про юридичних осіб, до яких застосовано заходи кримінально-правового характеру у зв'язку з вчиненням корупційного правопорушення.
+        </div>
+
+        <!-- Section 5 -->
+        <div class="instruction-section-title">Розділ V. Сучасні процедури контролю НАЗК (Новації 2026 року)</div>
+        <p class="text-paragraph">
+          З метою підвищення ефективності фінансового контролю та перевірки доброчесності публічних службовців, НАЗК використовує передові методики та підзаконні акти, суттєво оновлені у 2026 році.
+        </p>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-bottom: var(--spacing-xs);">
+          1. Моніторинг способу життя (МСЖ):
+        </p>
+        <div class="list-item">
+          <strong>Мета:</strong> Встановлення фактичної відповідності рівня життя декларанта та членів його сім'ї задекларованим майну та доходам.
+        </div>
+        <div class="list-item">
+          <strong>Особливості здійснення:</strong>
+          <br>• Моніторинг є вибірковим та здійснюється на підставі інформації, отриманої від фізичних/юридичних осіб, ЗМІ, правоохоронних органів або з інших відкритих джерел.
+          <br>• Проводиться відповідно до Наказу НАЗК № 236/23 без надмірного втручання у право на недоторканність особистого та сімейного життя суб'єкта декларування.
+          <br>• Рішення про початок МСЖ приймається керівником самостійного структурного підрозділу НАЗК на підставі доповідної записки про ознаки невідповідності рівня життя.
+        </div>
+
+        <p class="text-paragraph" style="font-weight: 600; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs);">
+          2. Нові правила перевірок НАЗК (Наказ від 25.06.2026 № 177/26):
+        </p>
+        <p class="text-paragraph" style="margin-top: 0;">
+          Цей наказ вніс кардинальні зміни до Порядку проведення перевірок організації роботи із запобігання і виявлення корупції:
+        </p>
+        <div class="list-item">
+          <strong>Контроль виконання приписів:</strong> До предмету перевірок НАЗК офіційно додано контроль стану виконання раніше внесених приписів та/або впровадження рекомендацій, наданих Агентством за результатами попередніх перевірок.
+        </div>
+        <div class="list-item">
+          <strong>Нова підстава для позапланових перевірок:</strong> Якщо об'єкт перевірки (державний орган чи установа) не надає на запит НАЗК інформацію та підтверджуючі документи щодо стану виконання приписів чи впровадження рекомендацій, це є <strong>офіційною підставою для призначення позапланової перевірки</strong>.
+        </div>
+        <div class="list-item">
+          <strong>Періодичність планових перевірок:</strong> Планові перевірки одного й того самого об'єкта проводяться не частіше одного разу на два роки. Річний план перевірок затверджується Головою НАЗК та оприлюднюється до 31 грудня року, що передує плановому.
+        </div>
+        <div class="list-item">
+          <strong>Обмеження строку перевірки:</strong> Строк проведення перевірки організації роботи із запобігання корупції тепер <strong>не може перевищувати трьох років</strong> (внесено зміни до п. 5 розділу ІІ Порядку).
+        </div>
+        <div class="list-item">
+          <strong>Рекомендації та облік:</strong> НАЗК отримало право надавати письмові рекомендації щодо покращення антикорупційної системи не лише самому органу, а й юридичним особам, які належать до сфери його управління. Облік перевірок ведеться як у паперовій, так і в електронній формі (через систему електронного документообігу).
+        </div>
+
+        <!-- Section 6 -->
+        <div class="instruction-section-title">Розділ VI. Практичний алгоритм захисту декларанта в суді</div>
+        <p class="text-paragraph">
+          Якщо правоохоронними органами (наприклад, Управлінням стратегічних розслібувань Національної поліції) відносно особи складено протокол про адміністративне правопорушення за ст. 172-6 КУпАП, необхідно діяти за чітким юридичним алгоритмом:
+        </p>
+
+        <div class="list-item">
+          <strong>1. Оцінка поважності причин затримки:</strong>
+          <br>• Закон передбачає відповідальність лише за несвоєчасне подання декларації <strong>без поважних причин</strong>.
+          <br>• До поважних причин згідно з практикою Вищого спецсуду та роз'ясненнями НАЗК належать: важка хвороба або перебування на стаціонарному лікуванні; технічні збої на сайті НАЗК (обов'язково фіксувати скріншотами, зверненнями до техпідтримки support@nazk.gov.ua); неотримання або затримка отримання довідок про доходи від третіх осіб (за наявності письмових запитів); перебування під вартою або у зоні активних бойових дій.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>2. Аналiз строків давності притягнення:</strong>
+          <br>• Згідно із КУпАП, адміністративне стягнення за правопорушення, пов’язані з корупцією, може бути накладено <strong>протягом шести місяців з дня виявлення, але не пізніше двох років з дня його вчинення</strong>. Якщо ці строки минули — справа підлягає закриттю.
+        </div>
+        <div class="list-item" style="margin-top: var(--spacing-xs);">
+          <strong>3. Забезпечення активної доказової позиції:</strong>
+          <br>• Суд самостійно не збиратиме виправдовувальні докази. Обов'язок доведення поважності причин лежить на особі, щодо якої складено протокол.
+          <br>• Необхідно залучити професійного адвоката, оскільки у судовому процесі декларанту протистоїть прокурор, участь якого у таких справах є обов'язковою. Пасивна позиція призведе до штрафу та внесення до Реєстру корупціонерів.
+        </div>
+
+        <!-- Section 7 -->
+        <div class="instruction-section-title">Рекомендована нормативна література для опрацювання</div>
+        <div class="list-item">1. Конституція України (ст. 63 — право не свідчити проти себе).</div>
+        <div class="list-item">2. Закон України «Про запобігання корупції» від 14 жовтня 2014 року № 1700-VII.</div>
+        <div class="list-item">3. Закон України «Про державну службу» від 10 грудня 2015 року № 889-VIII.</div>
+        <div class="list-item">4. Наказ НАЗК № 252/23 від 08.11.2023 (Форма декларації та Порядок заповнення).</div>
+        <div class="list-item">5. Наказ НАЗК № 177/26 від 25.06.2026 (Нові правила проведення перевірок уповноважених органів).</div>
+        <div class="list-item">6. Офіційні Роз'яснення НАЗК для кампанії декларування 2026 року (База знань НАЗК — wiki.nazk.gov.ua).</div>
+        <div class="list-item">7. Інформаційний лист Вищого Спеціалізованого Суду України «Щодо притягнення до адміністративної відповідальності за окремі правопорушення, пов'язані з корупцією».</div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення антикорупційного законодавства тягне за собою кримінальну, адміністративну, дисциплінарну та/або цивільно-правову відповідальність згідно з законодавством України.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
