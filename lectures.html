@@ -198,6 +198,92 @@
       color: var(--color-accent);
     }
 
+    .lecture-card-wrapper {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .lecture-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-md) var(--spacing-lg);
+      background-color: rgba(139, 94, 60, 0.08);
+      border: 1px solid rgba(203, 178, 156, 0.4);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .lecture-card:hover {
+      background-color: rgba(139, 94, 60, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+      border-color: var(--color-accent);
+    }
+
+    .lecture-card-content {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      flex: 1;
+    }
+
+    .lecture-card-icon {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+      min-width: 2.2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .lecture-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #A06D46 100%);
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .lecture-title {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--color-accent);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .lecture-desc {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .lecture-arrow {
+      color: var(--color-accent);
+      font-size: 1.1rem;
+      margin-left: var(--spacing-md);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .lecture-card:hover .lecture-arrow {
+      transform: translateX(4px);
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -346,6 +432,58 @@
         margin-top: 20px !important;
         page-break-inside: avoid;
       }
+
+      .lecture-card-wrapper {
+        margin-bottom: 12px !important;
+        page-break-inside: avoid;
+      }
+
+      .lecture-card {
+        display: block !important;
+        border: 1px solid #cbd5e0 !important;
+        background-color: transparent !important;
+        padding: 10px 14px !important;
+        box-shadow: none !important;
+        text-decoration: none !important;
+      }
+
+      .lecture-card-content {
+        display: block !important;
+      }
+
+      .lecture-card-icon {
+        display: none !important;
+      }
+
+      .lecture-badge {
+        display: inline-block !important;
+        background-color: #2b6cb0 !important;
+        color: #ffffff !important;
+        font-size: 8pt !important;
+        font-weight: bold !important;
+        padding: 2px 6px !important;
+        margin-bottom: 4px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .lecture-title {
+        display: block !important;
+        font-size: 12pt !important;
+        color: #1a365d !important;
+        font-weight: bold !important;
+        margin-bottom: 4px !important;
+      }
+
+      .lecture-desc {
+        display: block !important;
+        font-size: 10pt !important;
+        color: #4a5568 !important;
+      }
+
+      .lecture-arrow {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -399,129 +537,153 @@
           </button>
         </div>
 
-        <!-- Premium Corruption Prevention Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_corruption_prevention.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-user-shield" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 3 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_problems_submitting.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-exclamation-triangle lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Питання організації діяльності уповноважених осіб з питань запобігання та виявлення корупції</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(з урахуванням змін антикорупційного законодавства станом на 2026 рік) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №3</span>
+                <strong class="lecture-title">Лекція №3: Проблемні питання підготовки та подання державними службовцями щорічних е-декларацій</strong>
+                <span class="lecture-desc">(Практичний посібник для кампанії декларування 2026 року) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Ethics Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_ethics.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-balance-scale" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 4 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_authorized_persons_control.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-clipboard-check lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Правила етичної поведінки осіб, уповноважених на виконання функцій держави</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Оновлена версія — 2026 рік) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №4</span>
+                <strong class="lecture-title">Лекція №4: Окремі питання контролю уповноваженими особами з питань запобігання та виявлення корупції</strong>
+                <span class="lecture-desc">Дотримання державними службовцями положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю: розширена оновлена редакція станом на 2026 рік • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Responsibility Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_responsibility.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-gavel" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 5 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_corruption_responsibility.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-shield-halved lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Відповідальність за вчинення корупційних правопорушень</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Оновлений конспект лекції — серпень 2026 р.) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №5</span>
+                <strong class="lecture-title">Лекція №5: Відповідальність за вчинення правопорушень, пов’язаних із корупцією</strong>
+                <span class="lecture-desc">(Актуалізовані роз'яснення щодо застосування норм КУпАП та Закону України «Про запобігання корупції») • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Financial Control Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_financial_control.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-file-invoice-dollar" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 6 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_anticorruption_policy.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-sitemap lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Питання практичного застосування положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Нова розширена навчально-методична лекція — актуалізовано станом на 2026 рік) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №6</span>
+                <strong class="lecture-title">Лекція №6: Загальні засади антикорупційної політики в Україні</strong>
+                <span class="lecture-desc">Антикорупційна стратегія та Державна антикорупційна програма (ДАП): принципи, координація та участь громадськості • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Problems Submitting Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_problems_submitting.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-exclamation-triangle" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 7 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_authorized_units_regulation.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-scale-balanced lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Проблемні питання підготовки та подання державними службовцями щорічних е-декларацій</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Практичний посібник для кампанії декларування 2026 року) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №7</span>
+                <strong class="lecture-title">Лекція №7: Правове регулювання діяльності уповноважених підрозділів (осіб) з питань запобігання та виявлення корупції</strong>
+                <span class="lecture-desc">(Нормативно-правові засади функціонування уповноважених підрозділів, антикорупційна політика та заходи в органах державної влади) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Authorized Persons Control Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_authorized_persons_control.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-clipboard-check" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 8 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_financial_control.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-file-invoice-dollar lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Окремі питання контролю уповноваженими особами з питань запобігання та виявлення корупції</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">Дотримання державними службовцями положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю: розширена оновлена редакція станом на 2026 рік • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №8</span>
+                <strong class="lecture-title">Лекція №8: Питання практичного застосування положень Закону України «Про запобігання корупції» щодо заходів фінансового контролю</strong>
+                <span class="lecture-desc">(Нова розширена навчально-методична лекція — актуалізовано станом на 2026 рік) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Corruption Responsibility Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_corruption_responsibility.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-shield-halved" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 9 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_conflict_of_interest.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-scale-unbalanced lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Відповідальність за вчинення правопорушень, пов’язаних із корупцією</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Актуалізовані роз'яснення щодо застосування норм КУпАП та Закону України «Про запобігання корупції») • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №9</span>
+                <strong class="lecture-title">Лекція №9: Актуальні питання практичного застосування положень Закону України «Про запобігання корупції» в частині запобігання, ідентифікації та врегулювання конфлікту інтересів</strong>
+                <span class="lecture-desc">(Адаптовано відповідно до Методичних рекомендацій НАЗК від 12.01.2024 № 2 зі змінами від 03.02.2025) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Conflict of Interest Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_conflict_of_interest.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-scale-unbalanced" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 10 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_ethics.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-balance-scale lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Актуальні питання практичного застосування положень Закону України «Про запобігання корупції» в частині запобігання, ідентифікації та врегулювання конфлікту інтересів</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">(Адаптовано відповідно до Методичних рекомендацій НАЗК від 12.01.2024 № 2 зі змінами від 03.02.2025) • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №10</span>
+                <strong class="lecture-title">Лекція №10: Правила етичної поведінки осіб, уповноважених на виконання функцій держави</strong>
+                <span class="lecture-desc">(Оновлена версія — 2026 рік) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 
-        <!-- Premium Anticorruption Policy Lecture Link Card -->
-        <div style="margin: 0 0 var(--spacing-lg) 0;">
-          <a href="lecture_anticorruption_policy.html" style="display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) var(--spacing-lg); background-color: rgba(139, 94, 60, 0.08); border: 1px solid rgba(203, 178, 156, 0.4); border-radius: var(--radius-lg); text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.backgroundColor='rgba(139, 94, 60, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(139, 94, 60, 0.08)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-              <i class="fas fa-sitemap" style="font-size: 1.8rem; color: var(--color-accent);"></i>
+        <!-- Lecture 11 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_corruption_prevention.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-user-shield lecture-card-icon"></i>
               <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--color-accent); font-family: 'Montserrat', sans-serif;">Загальні засади антикорупційної програми</strong>
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">Антикорупційна стратегія та Державна антикорупційна програма (ДАП): принципи, координація та участь громадськості • Запобігання та виявлення корупції</span>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №11</span>
+                <strong class="lecture-title">Лекція №11: Організація діяльності уповноважених осіб з питань запобігання та виявлення корупції в органах державної влади</strong>
+                <span class="lecture-desc">(з урахуванням змін антикорупційного законодавства станом на 2026 рік) • Запобігання та виявлення корупції</span>
               </div>
             </div>
-            <i class="fas fa-chevron-right" style="color: var(--color-accent);"></i>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
+          </a>
+        </div>
+
+        <!-- Lecture 12 Link Card -->
+        <div class="lecture-card-wrapper">
+          <a href="lecture_responsibility.html" class="lecture-card">
+            <div class="lecture-card-content">
+              <i class="fas fa-gavel lecture-card-icon"></i>
+              <div>
+                <span class="lecture-badge"><i class="fas fa-bookmark"></i> Лекція №12</span>
+                <strong class="lecture-title">Лекція №12: Відповідальність за вчинення корупційних правопорушень</strong>
+                <span class="lecture-desc">(Оновлений конспект лекції — серпень 2026 р.) • Запобігання та виявлення корупції</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right lecture-arrow"></i>
           </a>
         </div>
 

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правове регулювання діяльності уповноважених підрозділів (осіб) з питань запобігання та виявлення корупції - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+
+    .list-subitem {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-xs);
+      margin-left: calc(var(--spacing-lg) * 2);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .callout-box-warning {
+      background-color: rgba(239, 83, 80, 0.08);
+      border-left: 4px solid var(--color-danger);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg, var(--color-accent) 0%, #A06D46 100%);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 12pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .page-title {
+        display: none !important;
+      }
+
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      .instruction-section-title {
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 6px 10px !important;
+        margin-top: 18px !important;
+        margin-bottom: 12px !important;
+        border-left: 4px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .text-paragraph {
+        font-size: 11pt !important;
+        color: #111111 !important;
+        margin-bottom: 10px !important;
+        text-align: justify !important;
+      }
+      
+      .list-item, .list-subitem {
+        font-size: 11pt !important;
+        color: #111111 !important;
+        margin-bottom: 6px !important;
+      }
+      
+      .callout-box, .callout-box-warning {
+        border-left: 3px solid #2b6cb0 !important;
+        background-color: #f7fafc !important;
+        padding: 8px 12px !important;
+        margin: 12px 0 !important;
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .new-badge {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до переліку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">МАТЕРІАЛИ НАВЧАННЯ (ЛЕКЦІЯ №7)</h1>
+        <p class="subtitle">«Правове регулювання діяльності уповноважених підрозділів (осіб) з питань запобігання та виявлення корупції»</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <div class="new-badge"><i class="fas fa-bookmark"></i> ЛЕКЦІЯ №7</div>
+        <h2 class="page-title">Правове регулювання діяльності уповноважених підрозділів (осіб) з питань запобігання та виявлення корупції</h2>
+        <p class="page-subtitle" style="font-weight: 500;">Нормативно-правові засади функціонування уповноважених підрозділів, антикорупційна політика та система заходів в органах державної влади</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-book-reader"></i> Навчально-методичні матеріали</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Вступ -->
+        <div class="instruction-section-title"><i class="fas fa-shield-alt"></i> Вступ. Суспільні виклики та роль антикорупційної політики</div>
+        <p class="text-paragraph">
+          На сучасному етапі суспільного розвитку корупція стає серйозним стримуючим фактором, що значно уповільнює соціальні, економічні та політичні процеси. Корупцію називають однією з найбільш суттєвих загроз національній безпеці. В українському суспільстві чітко усвідомлюється неможливість досягнення мети сталого розвитку, впровадження європейських стандартів життя та виходу на провідні позиції у світі без використання ефективних механізмів протидії корупції.
+        </p>
+        <p class="text-paragraph">
+          Наразі не існує жодної держави, цілком позбавленої корупції. Проте в розвинених демократичних країнах сформована атмосфера нетерпимості відносно цього ганебного і небезпечного явища. У всіх без винятку випадках такого результату вдалося досягти завдяки розробці й успішній реалізації комплексу нормативно-правових та інституційних заходів у рамках державної антикорупційної політики.
+        </p>
+        <p class="text-paragraph">
+          В Україні протягом усіх років незалежності триває процес розробки та реалізації державної антикорупційної політики, який втілюється шляхом ухвалення антикорупційних законів, відповідних концепцій та стратегій, а також прийнятті державних програм щодо їх виконання. Багаторічне існування корупції в Україні виключає можливість швидкого її подолання.
+        </p>
+        <p class="text-paragraph">
+          Корупція є явищем динамічним, має високий рівень латентності, прояви корупції та їх значне поширення залежать від соціальних умов у суспільстві, тому боротьба з корупційними проявами в Україні ґрунтується на результатах регулярних досліджень та об’єктивних оцінок ситуації, з урахуванням яких визначаються подальші антикорупційні реформи, а стратегії зниження рівня корупції розраховуються на тривалий період. При цьому забезпечується ефективна взаємодія органів державної влади та органів місцевого самоврядування з інститутами громадянського суспільства.
+        </p>
+
+        <!-- Поняття та зміст антикорупційної політики -->
+        <div class="instruction-section-title"><i class="fas fa-sitemap"></i> 1. Поняття та зміст антикорупційної політики</div>
+        <p class="text-paragraph">
+          <strong>Антикорупційна політика</strong> – це розробка і постійне здійснення різнобічних і послідовних заходів держави і суспільства в рамках прийнятих державою основ конституційного ладу з метою усунення причин і умов, що породжують і живлять корупцію в різних сферах життя. Розробка антикорупційної політики починається зі з'ясування її основних напрямів. Ці напрями властиві практично будь-якій державі, навіть такій, де рівень корупції в даний час не є загрозливим. Інша справа – зміст конкретних заходів, що укладаються в кожен з напрямів (блоків).
+        </p>
+        <p class="text-paragraph">
+          Зміст напрямів антикорупційної політики має коригуватися не тільки в міру здійснення окремих заходів, але і з урахуванням результатів глибинних досліджень корупції, заснованих на науковому підході, зокрема, після більш ретельного вивчення причин корупції; «ділянок» державного та суспільного організму, найбільш уражених корупцією; мотивації корупційної поведінки; більш точної оцінки прямих і непрямих економічних втрат та ін.
+        </p>
+
+        <!-- Критерії та елементи -->
+        <div class="instruction-section-title"><i class="fas fa-layer-group"></i> 2. Елементи та критерії антикорупційної політики</div>
+        <p class="text-paragraph">Елементи антикорупційної політики можливо розбити за кількома критеріями:</p>
+        
+        <div class="list-item">
+          <strong>1. Тривалість антикорупційних заходів:</strong> за даним критерієм антикорупційна політика розбивається на разові і постійні заходи.
+        </div>
+        <div class="list-item">
+          <strong>2. Стадії антикорупційної політики:</strong> за цим критерієм антикорупційну політику можна розбити на наступні групи:
+        </div>
+        <div class="list-subitem">• <strong>а)</strong> розробка антикорупційних програм;</div>
+        <div class="list-subitem">• <strong>б)</strong> планування антикорупційних заходів;</div>
+        <div class="list-subitem">• <strong>в)</strong> прогнозування та аналіз стану корупції і тенденцій в її розвитку;</div>
+        <div class="list-subitem">• <strong>г)</strong> розробка спеціальних антикорупційних законопроектів і проектів підзаконних актів;</div>
+        <div class="list-subitem">• <strong>д)</strong> експертиза законопроектів і проектів підзаконних актів;</div>
+        <div class="list-subitem">• <strong>е)</strong> моніторинг реалізації антикорупційної політики та стану корупції;</div>
+        <div class="list-subitem">• <strong>ж)</strong> звітність державних органів у цілях оцінки ефективності їх антикорупційної діяльності.</div>
+
+        <!-- Напрями антикорупційної політики -->
+        <div class="instruction-section-title"><i class="fas fa-compass"></i> 3. Напрями антикорупційної політики</div>
+        <p class="text-paragraph">Основними напрямками антикорупційної політики є:</p>
+        <div class="list-item">• <strong>Корегування законодавства</strong>;</div>
+        <div class="list-item">• <strong>Більш збалансована система стримувань і противаг</strong> між основними інститутами влади;</div>
+        <div class="list-item">• <strong>Упорядкування системи, структури і функцій</strong> органів виконавчої влади;</div>
+        <div class="list-item">• <strong>Зміна принципів державної (насамперед, публічної цивільної) служби</strong> і контроль за майновим становищем представників влади;</div>
+        <div class="list-item">• <strong>Створення умов для ефективного контролю</strong> за розподілом і витрачанням бюджетних коштів;</div>
+        <div class="list-item">• <strong>Зміцнення судової влади</strong>;</div>
+        <div class="list-item">• <strong>Вдосконалення правоохоронної системи</strong> і поліцейської діяльності (діяльності спецслужб);</div>
+        <div class="list-item">• <strong>Координація антикорупційної політики</strong>.</div>
+
+        <!-- Закон України Про запобігання корупції -->
+        <div class="instruction-section-title"><i class="fas fa-book"></i> 4. Закон України «Про запобігання корупції» як базовий нормативно-правовий акт</div>
+        <p class="text-paragraph">
+          Основним нормативно-правовим актом, яким регульовані питання щодо організації діяльності, направленої на запобігання та виявлення корупції в Україні, є <strong>Закон України «Про запобігання корупції»</strong> (далі – Закон), який:
+        </p>
+
+        <div class="list-item"><strong>1)</strong> визначає основні терміни, які використовуються у Законі та у суміжному законодавстві (стаття 1 Закону);</div>
+        <div class="list-item"><strong>2)</strong> визначає коло осіб за їх посадами та функціональними обов’язками, на яких поширюється дія Закону (стаття 3 Закону);</div>
+        <div class="list-item"><strong>3)</strong> врегульовує діяльність Національного агентства з питань запобігання корупції (далі – Національне агентство), включаючи його права та повноваження (розділ ІІ, статті 4-13<sup>1</sup>, 14-17<sup>1</sup> Закону);</div>
+        <div class="list-item"><strong>4)</strong> врегульовує питання формування та реалізації антикорупційної політики, як на рівні держави, так і на рівні окремих інституцій та юридичних осіб, а також участі громадськості в заходах щодо запобігання корупції (розділ ІІІ, статті 18-21 Закону);</div>
+
+        <!-- Складові формування та реалізації антикорупційної політики Держави -->
+        <div class="callout-box">
+          <strong style="display: block; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; color: var(--color-accent);">
+            <i class="fas fa-info-circle"></i> Примітка. Складові формування та реалізації антикорупційної політики Держави:
+          </strong>
+          
+          <p class="text-paragraph" style="margin-bottom: var(--spacing-sm);">
+            <strong>• Національна доповідь.</strong> Національна доповідь щодо ефективності реалізації державної антикорупційної політики (далі – Національна доповідь) є основним документом, у якому відображається узагальнена інформація щодо ефективності формування та реалізації антикорупційної політики України. (Національна доповідь щодо ефективності реалізації державної антикорупційної політики за попередній період (у 2021–2025 роках), підготовлена Національним агентством з питань запобігання корупції у квітні 2025 року, виступає як ретроспективний аналіз минулого періоду для формування нових стратегій на новий цикл).
+          </p>
+          <p class="text-paragraph" style="margin-bottom: var(--spacing-sm);">
+            Підготовка Національної доповіді здійснюється з метою:
+            <br>1) забезпечення комплексної оцінки стану, динаміки та ефективності формування та реалізації антикорупційної політики України у відповідний період;
+            <br>2) виявлення основних проблем, які унеможливлюють або суттєво ускладнюють досягнення головних цілей і завдань антикорупційної реформи, розвиток антикорупційних інституцій, удосконалення правових інститутів і механізмів, реалізацію антикорупційних заходів тощо;
+            <br>3) розробки пропозицій і рекомендацій щодо вирішення проблем, виявлених за результатами проведеного аналізу, підвищення ефективності формування та реалізації антикорупційної політики України у найближчій і віддаленій перспективах.
+          </p>
+          <p class="text-paragraph" style="margin-bottom: var(--spacing-sm);">
+            <strong>Статтею 20 Закону визначено наступне:</strong>
+            <br>— підготовка Національної доповіді здійснюється у рік завершення дії Антикорупційної стратегії;
+            <br>— Національне агентство готує Національну доповідь, яку не пізніше 1 квітня оприлюднює на своєму офіційному веб-сайті та подає Кабінету Міністрів України, Верховній Раді України, Президенту України;
+            <br>— у Національній доповіді повинні відображатися: узагальнений аналіз ситуації, звіт про стан реалізації Антикорупційної стратегії та державної антикорупційної програми, висновки та рекомендації, у тому числі щодо строку дії та напрямів Антикорупційної стратегії на новий період.
+          </p>
+          <p class="text-paragraph" style="margin-bottom: var(--spacing-sm);">
+            <strong>• Антикорупційна стратегія.</strong> Законом України «Про засади державної антикорупційної політики на 2026–2030 роки» затверджено Антикорупційну стратегію на 2026–2030 роки (далі – Антикорупційна стратегія). Метою цієї Антикорупційної стратегії є досягнення суттєвого прогресу в запобіганні та протидії корупції, а також забезпечення злагодженості та системності антикорупційної діяльності всіх органів державної влади та органів місцевого самоврядування.
+            <br>Антикорупційна стратегія реалізується шляхом виконання відповідної державної антикорупційної програми з виконання Антикорупційної стратегії, яку розробляє Національне агентство з урахуванням особливостей, встановлених Законом, та затверджує Кабінет Міністрів України на термін дії цієї Антикорупційної стратегії.
+          </p>
+          <p class="text-paragraph" style="margin-bottom: 0;">
+            <strong>• Державна антикорупційна програма.</strong> З метою виконання Антикорупційної стратегії розроблено Державну антикорупційну програму на 2026–2030 роки (далі – Програма). Метою Програми є досягнення значного прогресу в запобіганні та протидії корупції, забезпечення злагодженості та системності антикорупційної діяльності всіх державних органів та органів місцевого самоврядування, а також належного процесу відновлення України.
+          </p>
+        </div>
+
+        <!-- Продовження функцій Закону -->
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);"><strong>(Продовження функцій Закону України «Про запобігання корупції»):</strong></p>
+        <div class="list-item"><strong>5)</strong> визначає спеціально уповноважені суб’єкти у сфері протидії корупції (стаття 1 Закону);</div>
+        <div class="list-item"><strong>6)</strong> встановлює конкретні обмеження, спрямовані на запобігання корупції, а саме обмеження щодо використання службових повноважень, одержання подарунків, сумісництва та суміщення, обмеження після припинення діяльності, обмеження спільної роботи близьких осіб (статті 22-27 Закону);</div>
+        <div class="list-item"><strong>7)</strong> встановлює порядок запобігання та механізми врегулювання конфлікту інтересів (розділ V, статті 28-36 Закону);</div>
+        <div class="list-item"><strong>8)</strong> визначає правила етичної поведінки (розділ VI, статті 37-44 Закону);</div>
+        <div class="list-item"><strong>9)</strong> встановлює порядок здійснення фінансового контролю – зміст декларацій осіб, уповноважених на виконання функцій держави або місцевого самоврядування, моніторингу способу життя (розділ VII);</div>
+        <div class="list-item"><strong>10)</strong> врегульовує питання, пов’язані з функціонуванням інституту викривачів (осіб, які надають допомогу в запобіганні та протидії корупції) (розділ VII, статті 53-53<sup>9</sup> Закону).</div>
+
+        <!-- Звертаємо увагу: Портал викривачів -->
+        <div class="callout-box-warning">
+          <strong style="display: block; margin-bottom: 6px; font-family: 'Montserrat', sans-serif; color: var(--color-danger);">
+            <i class="fas fa-exclamation-triangle"></i> Звертаємо увагу! Єдиний портал повідомлень викривачів
+          </strong>
+          <p class="text-paragraph" style="margin-bottom: 0; color: var(--text-primary);">
+            Після підключення органу Казначейства до Єдиного порталу повідомлень викривачів (далі – Портал) розгляд повідомлень викривачів здійснюється виключно у порядку, визначеному статтею 53<sup>2</sup> Закону. При цьому не застосовуються положення Методичних рекомендацій від 21.01.2021 № 13, які втрачають чинність.
+          </p>
+        </div>
+
+        <div class="list-item"><strong>11)</strong> встановлює додаткові механізми, спрямовані на запобігання корупції, а саме: антикорупційну експертизу, спеціальну перевірку, ведення Єдиного державного реєстру осіб, які вчинили корупційні правопорушення, вимоги щодо прозорості та доступу до інформації, запобігання корупції у діяльності юридичних осіб (статті 54-64 Закону);</div>
+        <div class="list-item"><strong>12)</strong> визначає види відповідальності за корупційні або пов’язані з корупцією правопорушення (розділ ХІ);</div>
+        <div class="list-item"><strong>13)</strong> врегульовує питання міжнародного співробітництва у сфері запобігання корупції (розділ ХІІ).</div>
+
+        <!-- Спеціальне та суміжне законодавство -->
+        <div class="instruction-section-title"><i class="fas fa-balance-scale"></i> 5. Правовий статус уповноважених підрозділів (осіб) та суміжне законодавство</div>
+        <p class="text-paragraph">
+          Крім Закону питання, пов’язані з антикорупційною діяльністю на державній службі, знайшли своє відображення у Законі України «Про правовий режим воєнного стану» та Законі України «Про державну службу», яким регулюється проходження державної служби, у тому числі уповноваженими особами. ЗУ «Про державну службу» передбачено, що порушення окремих вимог законодавства про запобігання та протидію корупції може слугувати підставою для припинення державної служби.
+        </p>
+        <p class="text-paragraph">
+          Відповідно до частини першої статті 13<sup>1</sup> Закону уповноважені підрозділи (уповноважені особи) з питань запобігання та виявлення корупції утворюються у визначених цією статтею органах з метою організації та здійснення заходів із запобігання та виявлення корупції. Їх діяльність ґрунтується на <strong>Типовому положенні (наказ НАЗК від 27.05.2021 № 277/21)</strong>, яке залишається чинним та повністю правильним. Оцінка корупційних ризиків, розгляд повідомлень викривачів та контроль за дотриманням законодавства — це незмінний функціонал.
+        </p>
+
+        <!-- Внутрішні організаційно-розпорядчі документи -->
+        <div class="instruction-section-title"><i class="fas fa-file-contract"></i> 6. Ключові внутрішні організаційно-розпорядчі документи відомства</div>
+        <p class="text-paragraph">
+          Серед внутрішніх організаційно-розпорядчих документів відомства ключовими є:
+        </p>
+        <div class="list-item">
+          • <strong>Наказ Державної казначейської служби України «Про затвердження антикорупційної програми Державної казначейської служби України на поточний період (2026-2028 роки)»</strong> (відповідно до нового законодавчого циклу);
+        </div>
+        <div class="list-item">
+          • <strong>Наказ Казначейства від 28.10.2021 № 313</strong> «Про затвердження Положення щодо впровадження механізмів заохочення викривачів...»;
+        </div>
+        <div class="list-item">
+          • <strong>Наказ Казначейства від 28.06.2024 № 189</strong> «Про затвердження Порядку взаємодії Сектору з питань запобігання та виявлення корупції та Управління персоналу під час здійснення заходів антикорупційного спрямування у Державній казначейській службі України».
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
