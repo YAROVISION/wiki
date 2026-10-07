@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Викривачі корупції. Державний захист викривачів - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg, var(--color-accent) 0%, #A06D46 100%);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 12pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .page-title {
+        display: none !important;
+      }
+      
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      .instruction-section-title {
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 6px 10px !important;
+        margin-top: 18px !important;
+        margin-bottom: 10px !important;
+        border-left: 4px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .text-paragraph {
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        margin-bottom: 10px !important;
+        text-align: justify !important;
+      }
+      
+      .list-item {
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        margin-bottom: 6px !important;
+        margin-left: 15px !important;
+      }
+      
+      .callout-box {
+        background-color: #f7fafc !important;
+        border-left: 3px solid #4a5568 !important;
+        padding: 8px 12px !important;
+        margin: 12px 0 !important;
+        font-size: 10.5pt !important;
+        color: #1a202c !important;
+        page-break-inside: avoid;
+      }
+      
+      .new-badge {
+        display: none !important;
+      }
+      
+      .additional-doc-card {
+        border: 1px solid #cbd5e0 !important;
+        background-color: transparent !important;
+        padding: 10px !important;
+        margin-top: 20px !important;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до списку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">ЛЕКЦІЯ №1: ВИКРИВАЧІ КОРУПЦІЇ. ДЕРЖАВНИЙ ЗАХИСТ ВИКРИВАЧІВ</h1>
+        <p class="subtitle">Навчально-методичні матеріали для підвищення кваліфікації державних службовців</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <span class="new-badge"><i class="fas fa-bookmark"></i> Лекція №1</span>
+        <h2 class="page-title">Лекція №1: Викривачі корупції. Державний захист викривачів</h2>
+        <p class="page-subtitle">Правовий статус викривача корупції, порядок здійснення перевірок за повідомленнями, канали інформування, комплексні гарантії захисту прав (особистих, майнових, трудових), право на винагороду та юридичний імунітет відповідно до Закону України «Про запобігання корупції».</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-bullhorn"></i> Тематичний навчальний курс</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Introduction -->
+        <div class="instruction-section-title">Вступ. Поняття викривача корупції</div>
+        <p class="text-paragraph">
+          <strong>Викривач</strong> — це фізична особа, яка за наявності обґрунтованого переконання, що інформація є достовірною, повідомила про вчинення іншою особою корупційного або пов’язаного з корупцією правопорушення, іншого порушення вимог Закону України «Про запобігання корупції»:
+        </p>
+        <div class="list-item">• керівнику відповідного державного органу, органу влади Автономної Республіки Крим, органу місцевого самоврядування;</div>
+        <div class="list-item">• керівнику підприємства, установи, організації;</div>
+        <div class="list-item">• уповноваженій особі (підрозділу) з питань запобігання та виявлення корупції у відповідному органі, підприємстві, установі, організації;</div>
+        <div class="list-item">• спеціально уповноваженим суб’єктам у сфері протидії корупції.</div>
+
+        <!-- Section 1 -->
+        <div class="instruction-section-title">Розділ 1. Державний захист викривачів (Стаття 53)</div>
+        <div class="list-item">
+          <strong>1. Захист особи та майна:</strong> Викривачі та їх близькі особи перебувають під захистом держави. За наявності загрози життю, житлу, здоров’ю та майну викривачів чи їх близьких осіб у зв’язку зі здійсненим повідомленням про можливі факти корупційних або пов’язаних з корупцією правопорушень (чи інших порушень Закону), правоохоронними органами до них можуть бути застосовані правові, організаційно-технічні та інші заходи захисту від протиправних посягань, передбачені Законом України «Про забезпечення безпеки осіб, які беруть участь у кримінальному судочинстві».
+        </div>
+        <div class="list-item">
+          <strong>2. Правова допомога:</strong> Для захисту прав та представництва своїх інтересів викривач може користуватися всіма видами правової допомоги, передбаченої Законом України «Про безоплатну правничу допомогу», або залучити адвоката самостійно.
+        </div>
+        <div class="list-item">
+          <strong>3. Повноваження Національного агентства з питань запобігання корупції (НАЗК):</strong>
+          <br>• Здійснює представництво в суді інтересів викривача у випадках, якщо викривач неспроможний самостійно захистити свої порушені чи оспорювані права або реалізовувати процесуальні повноваження, а представники чи органи, яким надано право захищати його права, не здійснюють або неналежним чином здійснюють захист;
+          <br>• Має право бути присутнім на засіданнях судів усіх інстанцій (у тому числі на закритих судових засіданнях за умови згоди викривача, в інтересах якого судовий розгляд оголошено закритим);
+          <br>• Має право звертатися до суду з позовом (заявою) про захист прав і свобод викривачів, брати участь у судовому розгляді справ, провадження в яких відкрито за його позовами, заявами, клопотаннями чи поданнями;
+          <br>• Має право вступати у справи, провадження в яких відкрито за позовами (заявами, клопотаннями) викривачів, на будь-якій стадії їх судового розгляду;
+          <br>• Має право ініціювати (незалежно від участі НАЗК у судовому провадженні) перегляд судових рішень у порядку, встановленому законом.
+        </div>
+
+        <!-- Section 2 -->
+        <div class="instruction-section-title">Розділ 2. Забезпечення умов для повідомлення інформації (Стаття 53-1)</div>
+        <div class="list-item">
+          <strong>1. Способи повідомлення:</strong> Держава заохочує викривачів та сприяє їм у повідомленні про можливі факти корупційних або пов’язаних з корупцією правопорушень (чи інших порушень Закону) усно та письмово. Зокрема, через:
+          <br>• спеціальні телефонні лінії;
+          <br>• офіційні вебсайти;
+          <br>• засоби електронного зв’язку;
+          <br>• звернення до засобів масової інформації, журналістів, громадських об’єднань, професійних спілок.
+        </div>
+        <div class="list-item">
+          <strong>2. Обов'язки організацій та суб'єктів:</strong> Спеціально уповноважені суб’єкти у сфері протидії корупції, державні органи, органи влади АРК, органи місцевого самоврядування, юридичні особи публічного права та інші визначені законом юрособи забезпечують викривачам умови для повідомлення шляхом:
+          <br>• впровадження механізмів заохочення та формування культури повідомлення;
+          <br>• надання працівникам (особам, які проходять службу, навчання або виконують роботу) методичної допомоги та консультацій;
+          <br>• визначення внутрішніх процедур і механізмів прийняття та розгляду повідомлень;
+          <br>• обов’язкового створення та забезпечення функціонування внутрішніх та регулярних каналів повідомлення.
+        </div>
+        
+        <div class="callout-box">
+          <strong><i class="fas fa-shield-alt"></i> Сучасна законодавча практика:</strong> Основним внутрішнім та регулярним цифровим каналом є <strong>Єдиний портал повідомлень викривачів</strong> (<code>whistleblowers.nazk.gov.ua</code>), введений в експлуатацію НАЗК. Він забезпечує захищене подання, автоматизовану реєстрацію та розгляд як конфіденційних, так і анонімних повідомлень.
+        </div>
+
+        <!-- Section 3 -->
+        <div class="instruction-section-title">Розділ 3. Порядок здійснення перевірки за повідомленням викривача (Стаття 53-2)</div>
+        <div class="list-item">
+          <strong>1. Вибір каналу та зміст:</strong>
+          <br>• Викривач самостійно визначає, які канали використовувати для повідомлення інформації, що може бути перевірена.
+          <br>• Повідомлення має містити фактичні дані, що підтверджують можливе вчинення корупційного або пов’язаного з корупцією правопорушення, які можуть бути перевірені.
+        </div>
+        <div class="list-item">
+          <strong>2. Строк попередньої перевірки:</strong> Повідомлення через регулярні або внутрішні канали підлягає попередній перевірці у строк <strong>не більш як 10 робочих днів</strong>.
+        </div>
+        <div class="list-item">
+          <strong>3. Рішення за результатами перевірки:</strong> Відповідальна службова особа приймає одне з таких рішень:
+          <br>• призначити проведення внутрішньої (службової) перевірки або розслідування (у разі підтвердження фактів або потреби подальшого з’ясування їх достовірності);
+          <br>• передати матеріали до органу досудового розслідування (у разі встановлення ознак кримінального правопорушення) або до інших органів, уповноважених реагувати в порядку КПК України;
+          <br>• закрити провадження у разі непідтвердження фактів.
+        </div>
+        <div class="list-item">
+          <strong>4. Інформування та строки:</strong>
+          <br>• Викривачу надається детальна письмова інформація про результати попередньої перевірки у <strong>3-денний строк</strong> з дня її завершення.
+          <br>• Якщо інформація не належить до компетенції органу, викривача повідомляють про це у <strong>3-денний строк</strong> без проведення перевірки, із роз’ясненням належної компетенції.
+          <br>• Якщо інформація стосується дій або бездіяльності керівника органу/юрособи, вона без проведення перевірки у <strong>3-денний строк</strong> надсилається до НАЗК для визначення порядку розгляду.
+        </div>
+        <div class="list-item">
+          <strong>5. Зберігання та анонімність:</strong>
+          <br>• Матеріали перевірок чи розслідувань зберігаються відповідним органом/юрособою протягом <strong>3 років</strong> з дня отримання.
+          <br>• Розгляд анонімних повідомлень здійснюється у порядку, передбаченому Законом України «Про запобігання корупції».
+        </div>
+
+        <!-- Section 4 -->
+        <div class="instruction-section-title">Розділ 4. Права та гарантії викривача (Стаття 53-3)</div>
+        <p class="text-paragraph"><strong>Викривач має право:</strong></p>
+        <div class="list-item">• бути повідомленим про свої права та обов’язки, передбачені Законом;</div>
+        <div class="list-item">• подавати докази на підтвердження своєї заяви;</div>
+        <div class="list-item">• отримувати від уповноваженого органу підтвердження прийняття і реєстрації повідомлення;</div>
+        <div class="list-item">• давати пояснення, свідчення або відмовитися їх давати;</div>
+        <div class="list-item">• на безоплатну правову допомогу у зв’язку із захистом своїх прав;</div>
+        <div class="list-item">• на конфіденційність;</div>
+        <div class="list-item">• повідомляти про можливі факти правопорушень без зазначення відомостей про себе (анонімно);</div>
+        <div class="list-item">• у разі загрози життю і здоров’ю — на забезпечення безпеки щодо себе, близьких осіб, майна та житла (або на відмову від таких заходів);</div>
+        <div class="list-item">• на відшкодування витрат у зв’язку із захистом прав, витрат на адвоката та судовий збір;</div>
+        <div class="list-item">• на винагороду у визначених Законом випадках;</div>
+        <div class="list-item">• на отримання психологічної допомоги;</div>
+        <div class="list-item">• на звільнення від юридичної відповідальності у визначених Законом випадках;</div>
+        <div class="list-item">• отримувати інформацію про стан та результати розгляду, перевірки та/або розслідування.</div>
+        
+        <div class="callout-box">
+          <strong><i class="fas fa-users"></i> Важливо:</strong> Усі права та гарантії захисту викривачів поширюються також на <strong>близьких осіб</strong> викривача.
+        </div>
+
+        <!-- Section 5 -->
+        <div class="instruction-section-title">Розділ 5. Захист трудових прав викривача (Стаття 53-4)</div>
+        <div class="list-item">
+          <strong>1. Заборона тиску та звільнення:</strong> Викривачу та його близьким особам не може бути відмовлено у прийнятті на роботу, їх не може бути звільнено чи примушено до звільнення, притягнуто до дисциплінарної відповідальності чи піддано з боку керівника або роботодавця іншим негативним заходам впливу (переведення, атестація, зміна умов праці, відмова у призначенні на вищу посаду, зменшення заробітної плати тощо) або загрозі таких заходів у зв'язку з повідомленням про корупцію.
+        </div>
+        <div class="list-item">
+          <strong>2. Вибіркові рішення:</strong> До негативних заходів належать також формально правомірні рішення і дії керівника/роботодавця, які носять вибірковий характер (зокрема, не застосовуються до інших працівників у подібних ситуаціях та/або не застосовувалися раніше).
+        </div>
+        <div class="list-item">
+          <strong>3. Гарантії при відстороненні:</strong> У разі відсторонення працівника-викривача від виконання трудових обов’язків не з його вини, оплата праці на цей період здійснюється в розмірі <strong>середньої заробітної плати</strong> працівника за останній рік.
+        </div>
+        <div class="list-item">
+          <strong>4. Захист діяльності та угод:</strong> Викривачу та його близьким особам не може бути відмовлено в укладенні чи продовженні договору, трудового договору (контракту), наданні адміністративних та інших послуг. Забороняється створювати перешкоди у подальшому здійсненні трудової, професійної, господарської, громадської, наукової діяльності, проходженні служби чи навчання, а також вживати будь-яких дискримінаційних заходів.
+        </div>
+        <div class="list-item">
+          <strong>5. Поновлення прав:</strong> Викривачу та його близьким особам, права яких порушені, гарантується повне поновлення їх порушених прав.
+        </div>
+
+        <!-- Section 6 -->
+        <div class="instruction-section-title">Розділ 6. Винагорода викривачу (Стаття 53-7)</div>
+        <div class="list-item">
+          <strong>1. Умови виникнення права:</strong> Право на винагороду має викривач, який повідомив про корупційний злочин, якщо грошовий розмір предмета злочину або завдані державі збитки у <strong>5000 і більше разів</strong> перевищують розмір прожиткового мінімуму для працездатних осіб, установленого законом на час вчинення злочину.
+        </div>
+        <div class="list-item">
+          <strong>2. Розмір винагороди:</strong> Становить <strong>10 відсотків</strong> від грошового розміру предмета корупційного злочину або розміру завданих державі збитків після ухвалення обвинувального вироку суду. Сума не може перевищувати <strong>3000 мінімальних заробітних плат</strong>, установлених на час вчинення злочину.
+        </div>
+        <div class="list-item">
+          <strong>3. Розподіл між кількома викривачами:</strong> У разі повідомлення кількома викривачами різної інформації про один і той самий злочин (у тому числі інформації, що доповнює факти), розмір винагороди розподіляється у рівних частинах між ними.
+        </div>
+
+        <!-- Section 7 -->
+        <div class="instruction-section-title">Розділ 7. Юридична відповідальність викривача (Стаття 53-8)</div>
+        <div class="list-item">
+          <strong>1. Імунітет від відповідальності:</strong> Викривач не несе юридичної відповідальності за повідомлення про можливі факти корупції або поширення зазначеної інформації, незважаючи на можливе порушення своїх службових, цивільних, трудових чи інших обов’язків або зобов’язань.
+        </div>
+        <div class="list-item">
+          <strong>2. Умови конфіденційності:</strong> Повідомлення про корупцію не може розглядатися як порушення умов конфіденційності, передбачених цивільним, трудовим чи іншим договором (контрактом).
+        </div>
+        <div class="list-item">
+          <strong>3. Звільнення від відшкодування шкоди:</strong> Викривач звільняється від цивільно-правової відповідальності за майнову та/або моральну шкоду, завдану внаслідок здійснення повідомлення, крім випадку здійснення завідомо неправдивого повідомлення.
+        </div>
+        <div class="list-item">
+          <strong>4. Неумисна помилка:</strong> У разі неумисного повідомлення викривачем недостовірної інформації вона підлягає спростуванню у порядку, визначеному Цивільним кодексом України.
+        </div>
+
+        <!-- Normative Framework -->
+        <div class="instruction-section-title">Нормативно-правова база для опрацювання</div>
+        <div class="list-item">1. Закон України «Про запобігання корупції» від 14 жовтня 2014 року № 1700-VII (Розділ VIII «Захист викривачів», статті 53, 53-1 — 53-9).</div>
+        <div class="list-item">2. Закон України «Про забезпечення безпеки осіб, які беруть участь у кримінальному судочинстві» від 23 грудня 1993 року № 3782-XII.</div>
+        <div class="list-item">3. Закон України «Про безоплатну правничу допомогу» від 2 червня 2011 року № 3460-VI.</div>
+        <div class="list-item">4. Кримінальний процесуальний кодекс України (КПК України).</div>
+        <div class="list-item">5. Роз'яснення НАЗК щодо правового статусу, гарантій захисту та виплати винагороди викривачам корупції.</div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Повідомлення про факти корупції може здійснюватися через Єдиний портал повідомлень викривачів (<code>whistleblowers.nazk.gov.ua</code>) або безпосередньо уповноваженим особам відповідного державного органу.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
