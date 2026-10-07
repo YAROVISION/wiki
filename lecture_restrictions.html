@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вимоги, заборони та обмеження за Законом України «Про запобігання корупції» - Довідник з заповнення граф звітності</title>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the design stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts for premium headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--color-accent-hover);
+      transform: translateX(-4px);
+    }
+    
+    .page-content-card {
+      background-color: var(--surface-color);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      border: 1px solid rgba(203, 178, 156, var(--border-opacity));
+      box-shadow: 0 4px 20px var(--shadow-color);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .instruction-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid rgba(203, 178, 156, 0.2);
+    }
+    
+    .text-paragraph {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      text-align: justify;
+    }
+
+    .list-item {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-lg);
+    }
+    
+    .callout-box {
+      background-color: rgba(139, 94, 60, 0.05);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg, var(--color-accent) 0%, #A06D46 100%);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .print-btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .print-btn {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(139, 94, 60, 0.2);
+    }
+    
+    .print-btn:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(139, 94, 60, 0.3);
+    }
+    
+    .print-btn:active {
+      transform: translateY(0);
+    }
+
+    .additional-doc-card {
+      background-color: rgba(139, 94, 60, 0.05);
+      border: 1px solid rgba(203, 178, 156, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    
+    .additional-doc-card i {
+      font-size: 1.8rem;
+      color: var(--color-accent);
+    }
+    
+    .additional-doc-card strong {
+      color: var(--color-accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 20mm 15mm 20mm 15mm;
+      }
+      
+      body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #111111 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .app-container {
+        display: block !important;
+        min-height: auto !important;
+      }
+      
+      .app-container > header, 
+      .app-container > footer,
+      .back-link,
+      .print-btn-container {
+        display: none !important;
+      }
+      
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      
+      .page-content-card {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        animation: none !important;
+      }
+      
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 12px;
+      }
+      
+      .print-header .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #1a365d;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+      }
+      
+      .print-header .subtitle {
+        font-size: 12pt;
+        font-style: italic;
+        color: #4a5568;
+        margin: 0;
+      }
+      
+      .page-title {
+        display: none !important;
+      }
+      
+      .page-subtitle {
+        display: none !important;
+      }
+      
+      .instruction-section-title {
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        color: #1a365d !important;
+        background-color: #edf2f7 !important;
+        padding: 6px 10px !important;
+        margin-top: 18px !important;
+        margin-bottom: 10px !important;
+        border-left: 4px solid #2b6cb0 !important;
+        border-bottom: none !important;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .text-paragraph {
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        margin-bottom: 10px !important;
+        text-align: justify !important;
+      }
+      
+      .list-item {
+        font-size: 11pt !important;
+        color: #2d3748 !important;
+        margin-bottom: 6px !important;
+        margin-left: 15px !important;
+      }
+      
+      .callout-box {
+        background-color: #f7fafc !important;
+        border-left: 3px solid #4a5568 !important;
+        padding: 8px 12px !important;
+        margin: 12px 0 !important;
+        font-size: 10.5pt !important;
+        color: #1a202c !important;
+        page-break-inside: avoid;
+      }
+      
+      .new-badge {
+        display: none !important;
+      }
+      
+      .additional-doc-card {
+        border: 1px solid #cbd5e0 !important;
+        background-color: transparent !important;
+        padding: 10px !important;
+        margin-top: 20px !important;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <a href="index.html" class="header-title-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--spacing-md);">
+        <i class="fas fa-coffee logo-icon"></i>
+        <div class="header-titles">
+          <h1>
+            <span class="desktop-title">Довідник граф звітності</span>
+            <span class="mobile-title">Довідник звітності</span>
+          </h1>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Theme Toggle Switcher -->
+        <div class="theme-switch-container" id="theme-toggle" title="Змінити тему оформлення">
+          <div class="theme-switch-option active" id="theme-dark-opt"><i class="fas fa-moon"></i></div>
+          <div class="theme-switch-option" id="theme-light-opt"><i class="fas fa-sun"></i></div>
+          <div class="theme-switch-slider"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1000px; margin: 0 auto; width: 100%; padding: var(--spacing-xl) var(--spacing-lg);">
+
+      <!-- Back Link -->
+      <a href="lectures.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Назад до списку лекцій
+      </a>
+
+      <!-- Print-only Header -->
+      <div class="print-header" style="display: none;">
+        <h1 class="title">ЛЕКЦІЯ №12: ВИМОГИ, ЗАБОРОНИ ТА ОБМЕЖЕННЯ ЗА ЗАКОНОМ УКРАЇНИ «ПРО ЗАПОБІГАННЯ КОРУПЦІЇ»</h1>
+        <p class="subtitle">Матеріали навчання щодо актуальних питань практичного застосування положень Розділу IV Закону</p>
+      </div>
+
+      <!-- Page Card -->
+      <section class="page-content-card">
+        <span class="new-badge"><i class="fas fa-bookmark"></i> Лекція №12</span>
+        <h2 class="page-title">Лекція №12: Вимоги, заборони та обмеження, що встановлені Законом України «Про запобігання корупції»</h2>
+        <p class="page-subtitle">Практичне застосування спеціальних правил поведінки публічних службовців: заборона використання становища, обмеження щодо подарунків і сумісництва, post-employment вимоги, заборона спільної роботи близьких осіб та порядок поводження з неправомірною вигодою.</p>
+        
+        <!-- Print Button -->
+        <div class="print-btn-container">
+          <span style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-ban"></i> Тематичний навчальний курс</span>
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Роздрукувати / Зберегти PDF
+          </button>
+        </div>
+
+        <!-- Plan -->
+        <div class="callout-box" style="margin-bottom: var(--spacing-lg);">
+          <strong><i class="fas fa-list-ol"></i> План лекції:</strong>
+          <div style="margin-top: 6px; line-height: 1.6;">
+            1. Загальна характеристика системи вимог, заборон та обмежень антикорупційного законодавства.<br>
+            2. Обмеження щодо використання службових повноважень чи свого становища (ст. 22).<br>
+            3. Обмеження щодо одержання подарунків (ст. 23).<br>
+            4. Запобігання одержанню неправомірної вигоди або подарунка та поводження з ними (ст. 24).<br>
+            5. Обмеження щодо сумісництва та суміщення з іншими видами діяльності (ст. 25).<br>
+            6. Обмеження після припинення діяльності, пов’язаної з виконанням функцій держави або місцевого самоврядування (ст. 26).<br>
+            7. Обмеження спільної роботи близьких осіб (ст. 27).
+          </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="instruction-section-title">Вступ</div>
+        <p class="text-paragraph">
+          Антикорупційне законодавство України базується на поєднанні превентивних і каральних заходів. Центральне місце в превентивному механізмі посідає <strong>Розділ IV Закону України «Про запобігання корупції»</strong> (далі — Закон), який встановлює спеціальні правила поведінки публічних службовців та прирівняних до них осіб.
+        </p>
+        <p class="text-paragraph">
+          Ці правила поділяються на:
+        </p>
+        <div class="list-item">• <strong>Заборони</strong> — імперативні норми, що категорично виключають вчинення певних дій.</div>
+        <div class="list-item">• <strong>Обмеження</strong> — рамкові умови, за яких певна діяльність або поведінка дозволяється лише у чітко визначених межах або за наявності встановлених винятків.</div>
+        <div class="list-item">• <strong>Вимоги (обов'язки)</strong> — приписи щодо обов'язкового вчинення активних юридичних і фактичних дій у разі настання передбачених законом обставин.</div>
+
+        <!-- Question 1 -->
+        <div class="instruction-section-title">Питання 1. Загальна характеристика системи вимог, заборон та обмежень</div>
+        <p class="text-paragraph">
+          Суб’єктний склад осіб, на яких поширюються обмеження Розділу IV Закону, визначається частиною 1 статті 3 Закону. До них, зокрема, належать:
+        </p>
+        <div class="list-item">
+          <strong>1. Особи, уповноважені на виконання функцій держави або місцевого самоврядування (п. 1 ч. 1 ст. 3):</strong> Президент України, Голова Верховної Ради та народні депутати України, Прем’єр-міністр та члени Уряду, державні службовці, посадові особи місцевого самоврядування, судді, прокурори, поліцейські, військово посадові особи Збройних Сил України тощо.
+        </div>
+        <div class="list-item">
+          <strong>2. Особи, які прирівнюються до осіб, уповноважених на виконання функцій держави або місцевого самоврядування (п. 2 ч. 1 ст. 3):</strong> посадові особи юридичних осіб публічного права, арбітражні керуючі, аудитори, оцінювачі, експерти при виконанні ними публічних повноважень.
+        </div>
+        <p class="text-paragraph">
+          Правовим наслідком недотримання цих приписів є дисциплінарна, адміністративна (зокрема, статті 172-2, 172-4, 172-5, 172-7 Кодексу України про адміністративні правопорушення — КУпАП) або кримінальна відповідальність. Відомості про порушників вносяться до <strong>Єдиного державного реєстру осіб, які вчинили корупційні або пов’язані з корупцією правопорушення (Реєстр корупціонерів)</strong>, держателем та адміністратором якого є Національне агентство з питань запобігання корупції (НАЗК).
+        </p>
+
+        <!-- Question 2 -->
+        <div class="instruction-section-title">Питання 2. Обмеження щодо використання службових повноважень чи свого становища (ст. 22)</div>
+        <p class="text-paragraph">
+          Відповідно до ст. 22 Закону, особам, зазначеним у ч. 1 ст. 3 Закону, забороняється використовувати свої службові повноваження або своє становище та пов’язані з цим можливості з метою:
+        </p>
+        <div class="list-item">• одержання неправомірної вигоди для себе чи інших осіб;</div>
+        <div class="list-item">• у тому числі використання будь-якого державного чи комунального майна або коштів у приватних інтересах.</div>
+        
+        <p class="text-paragraph" style="margin-top: var(--spacing-md);"><strong>Ключові елементи заборони:</strong></p>
+        <div class="list-item">
+          <strong>1. Неправомірна вигода</strong> — це грошові кошти або інше майно, переваги, пільги, послуги, нематеріальні активи, будь-яка інша вигода нематеріального чи негрошового характеру, які обіцяють, пропонують, надають або одержують безоплатно чи за ціною, нижчою за мінімальну ринкову, без законних на те підстав.
+        </div>
+        <div class="list-item">
+          <strong>2. Зловживання становищем</strong> — ситуація, коли суб'єкт використовує свій авторитет посади, зв'язки, доступ до інформації або можливості апарату органу для вирішення приватних питань всупереч публічному інтересу, навіть якщо безпосереднє вчинення таких дій не входить до посадової інструкції.
+        </div>
+        <div class="list-item">
+          <strong>3. Використання ресурсів</strong> — пряма заборона залучення службового транспорту, комп'ютерної техніки, робочого часу підлеглих або комунальних приміщень у власних приватних цілях або цілях сторонніх осіб.
+        </div>
+
+        <!-- Question 3 -->
+        <div class="instruction-section-title">Питання 3. Обмеження щодо одержання подарунків (ст. 23)</div>
+        <p class="text-paragraph">
+          Закон чітко розмежовує поняття неправомірної вигоди (яка є абсолютно забороненою) та подарунка (грошові кошти або інше майно, переваги, пільги, послуги, нематеріальні активи, які надаються/одержуються безоплатно або за ціною, нижчою за мінімальну ринкову).
+        </p>
+        
+        <div class="list-item">
+          <strong>1. Абсолютні заборони щодо одержання подарунків (ч. 1 ст. 23):</strong>
+          <br>Особам, уповноваженим на виконання функцій держави або місцевого самоврядування, та прирівняним до них особам категорично забороняється безпосередньо або через інших осіб вимагати, просити, одержувати подарунки:
+          <br>• <em>У зв’язку зі здійсненням діяльності:</em> пов’язаної з виконанням функцій держави або місцевого самоврядування (незалежно від вартості подарунка — навіть коробка цукерок чи чашка за виконання посадових обов'язків є правопорушенням).
+          <br>• <em>Від підлеглих:</em> якщо особа, яка дарує, перебуває в підпорядкуванні такої особи (заборонено будь-які подарунки від підлеглих керівникам, окрім випадків, якщо вони є близькими особами).
+        </div>
+
+        <div class="list-item">
+          <strong>2. Дозволені подарунки та вартісні обмеження (ч. 2 ст. 23):</strong>
+          <br>Посадовці можуть приймати подарунки, які відповідають загальновизнаним уявленням про гостинність, якщо вони даруються поза службовою діяльністю і особа, яка дарує, не перебуває в підпорядкуванні.
+        </div>
+
+        <div class="callout-box">
+          <strong><i class="fas fa-coins"></i> Важливо (актуальна редакція норми):</strong> Базовим розрахунковим показником є <strong>прожитковий мінімум для працездатних осіб (ПМПО)</strong>, встановлений на день прийняття подарунка (а не мінімальна заробітна плата, як передбачалося у попередніх редакціях законодавства).
+          <div style="margin-top: 6px;">
+            • <strong>Одноразовий подарунок:</strong> вартість не може перевищувати <strong>2 прожиткових мінімуми</strong> для працездатних осіб.<br>
+            • <strong>Сукупна вартість:</strong> сукупна вартість подарунків, отриманих від однієї особи (групи осіб) протягом року, не може перевищувати <strong>4 прожиткових мінімумів</strong> для працездатних осіб.
+          </div>
+        </div>
+
+        <div class="list-item">
+          <strong>3. Винятки, на які не поширюються обмеження щодо вартості (ч. 2 ст. 23):</strong>
+          <br>Обмеження щодо граничної вартості подарунків <strong>НЕ застосовуються</strong> до:
+          <br>1. Подарунків, які даруються <strong>близькими особами</strong> (батьки, діти, чоловік/дружина, рідні брати/сестри тощо).
+          <br>2. Загальнодоступних знижок на товари та послуги, загальнодоступних виграшів, призів, премій, бонусів.
+          <br>3. <strong>Витрат на службове відрядження</strong> — витрат на оплату проїзду, проживання, харчування, участі у навчальних, наукових заходах, якщо вони покриваються за рахунок запрошуючої сторони (організатора), міжнародних організацій, іноземних держав чи проєктів міжнародної технічної допомоги.
+        </div>
+
+        <div class="list-item">
+          <strong>4. Подарунки органу, державі або територіальній громаді:</strong>
+          <br>Подарунки, одержані особами як подарунки державі, Автономній Республіці Крим, територіальній громаді, державним чи комунальним підприємствам, установам чи організаціям (протокольні подарунки під час офіційних візитів, делегацій), є державною або комунальною власністю і передаються органу або установі у порядку, визначеному Кабінетом Міністрів України.
+        </div>
+
+        <!-- Question 4 -->
+        <div class="instruction-section-title">Питання 4. Запобігання одержанню неправомірної вигоди або подарунка та поводження з ними (ст. 24)</div>
+        <p class="text-paragraph">
+          Стаття 24 Закону встановлює чіткий алгоритм дій службовця у разі надходження пропозиції щодо неправомірної вигоди або забороненого подарунка.
+        </p>
+
+        <div class="list-item">
+          <strong>Алгоритм дій у разі пропозиції/надходження:</strong>
+          <br>У разі надходження пропозиції щодо неправомірної вигоди або подарунка, прийняття якого заборонено, службовець зобов'язаний невідкладно вжити таких заходів:
+          <br>1. <strong>Відмовитися</strong> від пропозиції.
+          <br>2. За можливості <strong>ідентифікувати особу</strong>, яка зробила таку пропозицію.
+          <br>3. <strong>Залучити свідків</strong>, якщо це можливо, у тому числі з числа співробітників.
+          <br>4. <strong>Письмово повідомити</strong> про факт пропозиції безпосереднього керівника (або керівника органу) або спеціально уповноважених суб’єктів у сфері протидії корупції (НАЗК, Національну поліцію, НАБУ, прокуратуру).
+        </div>
+
+        <div class="list-item">
+          <strong>Дії при виявленні залишеного майна:</strong>
+          <br>Якщо особа виявила у своєму службовому приміщенні чи отримала майно, що може бути неправомірною вигодою або забороненим подарунком, за відсутності дарувальника, вона зобов’язана:
+          <br>1. Невідкладно (не пізніше одного робочого дня) письмово повідомити про цей факт свого безпосереднього керівника.
+          <br>2. Про виявлення майна складається <strong>акт</strong>, який підписується особою, яка виявила майно, та її безпосереднім керівником або керівником органу (чи уповноваженою особою з питань запобігання корупції).
+          <br>3. Майно передається на відповідальне зберігання до ухвалення рішення щодо його подальшої долі.
+        </div>
+
+        <!-- Question 5 -->
+        <div class="instruction-section-title">Питання 5. Обмеження щодо сумісництва та суміщення з іншими видами діяльності (ст. 25)</div>
+        <p class="text-paragraph">
+          З метою запобігання відволіканню від виконання обов'язків та усунення конфлікту інтересів стаття 25 Закону встановлює суворі обмеження.
+        </p>
+
+        <div class="list-item">
+          <strong>1. Заборони (ч. 1 ст. 25):</strong>
+          <br>Особам, уповноваженим на виконання функцій держави або місцевого самоврядування (п. 1 ч. 1 ст. 3), забороняється:
+          <br>• Займатися іншою оплачуваною (крім дозволених винятків) або підприємницькою діяльністю, якщо інше не передбачено Конституцією або законами України.
+          <br>• Входити до складу правління, інших виконавчих чи контролюючих органів, наглядової ради підприємства або організації, що має на меті одержання прибутку.
+        </div>
+
+        <div class="list-item">
+          <strong>2. Дозволені види діяльності (винятки):</strong>
+          <br>Закон дозволяє поєднувати публічну службу виключно з:
+          <br>1. <strong>Викладацькою</strong> діяльністю.
+          <br>2. <strong>Науковою</strong> діяльністю.
+          <br>3. <strong>Творчою</strong> діяльністю.
+          <br>4. <strong>Медичною</strong> практикою.
+          <br>5. <strong>Інструкторською та суддівською</strong> практикою із спорту.
+        </div>
+
+        <div class="list-item">
+          <strong>3. Інші законодавчі винятки та особливості:</strong>
+          <br>• Входження до наглядових рад або органів управління господарських товариств, якщо особа здійснює функції з управління корпоративними правами держави чи територіальної громади та представляє інтереси держави або громади.
+          <br>• У період воєнного стану законодавством передбачено окремі тимчасові послаблення щодо сумісництва для певних категорій працівників (наприклад, перебування у простої чи відпустці без збереження зарплати), проте вони не поширюються на державних службовців категорій «А» і «Б» та військовослужбовців вищого офіцерського складу.
+        </div>
+
+        <!-- Question 6 -->
+        <div class="instruction-section-title">Питання 6. Обмеження після припинення діяльності (ст. 26)</div>
+        <p class="text-paragraph">
+          Особи, які звільнилися або іншим чином припинили діяльність, пов’язану з виконанням функцій держави або місцевого самоврядування, мають дотримуватися системи обмежень («post-employment restrictions»), щоб виключити торгівлю впливом або лобіювання власних інтересів.
+        </p>
+
+        <div class="list-item">
+          <strong>Протягом 1 року з дня припинення діяльності забороняється:</strong>
+          <br>1. Укладати трудові договори (контракти) або вчиняти правочини у сфері підприємницької діяльності з підприємствами, установами чи організаціями приватного права або ФОП, якщо протягом року до дня припинення служби особа здійснювала повноваження з контролю, нагляду або підготовки чи прийняття відповідних рішень щодо діяльності цих суб'єктів.
+          <br>2. Розголошувати або використовувати у своїх інтересах інформацію, яка стала відома у зв’язку з виконанням службових обов’язків, крім випадків, встановлених законом.
+          <br>3. Представляти інтереси будь-яких осіб у справах (у тому числі в судових спорах), в яких іншою стороною є орган, підприємство, установа чи організація, в якому (якій) особа працювала.
+        </div>
+        
+        <div class="callout-box">
+          <strong><i class="fas fa-gavel"></i> Юридичні наслідки порушення:</strong> Правочини, вчинені з порушенням вимог ст. 26 Закону, можуть бути визнані недійсними за позовом НАЗК або органів прокуратури в судовому порядку.
+        </div>
+
+        <!-- Question 7 -->
+        <div class="instruction-section-title">Питання 7. Обмеження спільної роботи близьких осіб (ст. 27)</div>
+        
+        <div class="list-item">
+          <strong>1. Суть обмеження:</strong>
+          <br>Особи, зазначені у пункті 1 частини 1 статті 3 Закону, не можуть мати у <strong>прямому підпорядкуванні</strong> близьких їм осіб або бути прямо підпорядкованими у зв’язку з виконанням повноважень близьким їм особам.
+          <br>• <em>Пряме підпорядкування</em> — відносини прямої організаційної або правової залежності підлеглої особи від її керівника, в тому числі через вирішення питань прийняття на роботу, звільнення, застосування заохочень, дисциплінарних стягнень, надання вказівок, контролю за виконанням тощо.
+        </div>
+
+        <div class="list-item">
+          <strong>2. Коло близьких осіб (ст. 1 Закону):</strong>
+          <br>Члени сім’ї суб’єкта (чоловік, дружина, діти, батьки), а також: рідні брати і сестри, дід, баба, внуки, усиновлювачі чи усиновлені, зять, невістка, тесть, теща, свекор, свекруха, вітчим, мачуха, пасинок, падчерка, а також особи, які спільно проживають, пов'язані спільним побутом і мають взаємні права та обов'язки.
+        </div>
+
+        <div class="list-item">
+          <strong>3. Винятки (ч. 1 ст. 27):</strong>
+          <br>Обмеження прямого підпорядкування не поширюються на:
+          <br>1. Виборні посади.
+          <br>2. Близьких осіб, які беруть участь у роботі колегіальних органів (під час розгляду питань відносно один одного діє процедура врегулювання конфлікту інтересів).
+          <br>3. Роботу в сільських населених пунктах (крім тих, що є районними центрами), а також в органах військового управління, з’єднаннях, військових частинах під час дії воєнного стану у встановленому законом порядку.
+        </div>
+
+        <div class="list-item">
+          <strong>4. Порядок дій у разі виникнення прямого підпорядкування:</strong>
+          <br>• Особи зобов'язані повідомити керівництво про виникнення таких обставин у <strong>15-денний строк</strong>.
+          <br>• Керівник або орган у <strong>місячний строк</strong> з дня виникнення обставин зобов’язаний вжити заходів щодо усунення прямого підпорядкування шляхом:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;1. Переведення однієї з осіб на іншу посаду, що виключає пряме підпорядкування (за її згодою).
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Переведення на рівнозначну або нижчу посаду.
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Якщо переведення неможливе — підпорядкована особа підлягає звільненню із займаної посади.
+        </div>
+
+        <!-- Conclusions -->
+        <div class="instruction-section-title">Висновки</div>
+        <p class="text-paragraph">
+          Дотримання вимог, заборон та обмежень, передбачених Розділом IV Закону України «Про запобігання корупції», є персональним обов’язком кожного публічного службовця. Зазначені норми спрямовані на запобігання корупційним ризикам, недопущення конфлікту інтересів та збереження довіри суспільства до інститутів державної влади та місцевого самоврядування.
+        </p>
+
+        <!-- Recommended Literature -->
+        <div class="instruction-section-title">Рекомендована нормативна література для опрацювання</div>
+        <div class="list-item">1. Закон України «Про запобігання корупції» від 14 жовтня 2014 року № 1700-VII (Розділ IV, статті 22–27).</div>
+        <div class="list-item">2. Кодекс України про адміністративні правопорушення (КУпАП — статті 172-2, 172-4, 172-5, 172-7).</div>
+        <div class="list-item">3. Закон України «Про державну службу» від 10 грудня 2015 року № 889-VIII.</div>
+        <div class="list-item">4. Роз’яснення НАЗК щодо застосування окремих положень Закону України «Про запобігання корупції» стосовно обмежень щодо одержання подарунків, сумісництва та спільної роботи близьких осіб.</div>
+        <div class="list-item">5. Порядок передачі подарунків, одержаних як подарунки державі, АРК, територіальній громаді, державним або комунальним установам (Постанова КМУ від 16 листопада 2011 р. № 1195).</div>
+
+        <div class="additional-doc-card" style="margin-top: var(--spacing-xl);">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>Примітка:</strong> Порушення встановлених обмежень щодо подарунків, сумісництва чи використання посади тягне за собою адміністративну або дисциплінарну відповідальність із обов'язковим внесенням відомостей до Реєстру корупціонерів НАЗК.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026. Засоби візуалізації розроблено на основі <strong>Exchanger Coffee Design System</strong>.<span id="visitor-counter"> <i class="fas fa-coffee" style="font-size: 0.85em;" title="Кава"></i></span></p>
+    </footer>
+  </div>
+
+  <!-- In-page theme control script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkOpt = document.getElementById('theme-dark-opt');
+    const lightOpt = document.getElementById('theme-light-opt');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        darkOpt.classList.remove('active');
+        lightOpt.classList.add('active');
+      } else {
+        document.body.classList.remove('light-theme');
+        darkOpt.classList.add('active');
+        lightOpt.classList.remove('active');
+      }
+      localStorage.setItem('coffee-theme', theme);
+    }
+
+    // Initialize theme from storage
+    const storedTheme = localStorage.getItem('coffee-theme') || 'dark';
+    applyTheme(storedTheme);
+
+    // Toggle click handler
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  </script>
+  <!-- Visitor Counter Script -->
+  <script>
+    (function() {
+      const counterSpan = document.getElementById('visitor-counter');
+      if (counterSpan) {
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/wiki.lexis.blog')
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.value !== undefined) {
+              counterSpan.textContent = ' ' + data.value;
+            }
+          })
+          .catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>
